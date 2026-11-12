@@ -1,0 +1,11 @@
+[
+  {
+    "journal": "TOG",
+    "volume": "45",
+    "issue": "4",
+    "conference": "SIGGRAPH",
+    "edition": 2026,
+    "evidence": "https://s2026.siggraph.org/program/technical-papers/",
+    "reason": "The official publication section explicitly names Volume 45, Issue No. 4 as the SIGGRAPH 2026 Technical Papers TOG issue. DBLP conference-stream links lag the journal records."
+  }
+]

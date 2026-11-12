@@ -1,0 +1,19 @@
+{
+  "base_url": "http://127.0.0.1:8767/",
+  "papers": 27362,
+  "passed": [
+    "Eight approved venues and the full deduplicated corpus load",
+    "SIGGRAPH and TOG union counts shared papers once",
+    "Known Gaussian Splatting paper resolves once across conference and journal",
+    "Empty results and reset work",
+    "Journal year, review category and exported paper rows agree",
+    "Pagination and page size work",
+    "Annual venue memberships and unique annual totals remain separate",
+    "Detailed CG topic counts, percentage export and paper drilldown agree",
+    "Country map, deduplicated author IDs, topic share and CSV agree with the affiliation snapshot",
+    "Empty geographic selections are handled explicitly",
+    "All views fit the mobile viewport",
+    "Eight-venue provenance and coverage are visible"
+  ],
+  "browser_errors": []
+}

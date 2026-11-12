@@ -1,6 +1,7 @@
 """Functional and visual checks against local or deployed CG Paper Atlas."""
 import argparse,csv,json
 from pathlib import Path
+from urllib.parse import parse_qs,urlsplit
 from playwright.sync_api import sync_playwright,expect
 from cg_config import DATA,VENUES,ROOT
 
@@ -8,16 +9,57 @@ def main():
     parser=argparse.ArgumentParser();parser.add_argument('--base-url',default='http://127.0.0.1:8767/');parser.add_argument('--output-dir',type=Path,default=ROOT/'docs');args=parser.parse_args()
     out=args.output_dir;out.mkdir(parents=True,exist_ok=True)
     papers=json.loads((DATA/'papers.json').read_text(encoding='utf-8'));s=json.loads((DATA/'summary.json').read_text(encoding='utf-8'));g=json.loads((DATA/'geography.json').read_text(encoding='utf-8'))
-    checks=[];errors=[]
+    checks=[];errors=[];requests=[]
     with sync_playwright() as runtime:
         browser=runtime.chromium.launch(headless=True);page=browser.new_page(viewport={'width':1440,'height':1000},device_scale_factor=1)
         page.on('pageerror',lambda e:errors.append(str(e)))
+        page.on('request',lambda r:requests.append(r.url))
         page.goto(args.base_url,wait_until='domcontentloaded')
         expect(page.locator('#result-status')).to_have_text(f"{s['total']:,} papers in this view",timeout=180000)
         expect(page.locator('#paper-body tr')).to_have_count(25)
         expect(page.locator('#venue-filters input')).to_have_count(8)
+        expect(page.locator('#country')).to_be_enabled(timeout=60000)
         checks.append('Eight approved venues and the full deduplicated corpus load')
         page.screenshot(path=str(out/'preview-desktop.png'))
+        country_papers=[p for p in papers if 'KR' in g['papers'].get(p['id'],{}).get('countries',{})]
+        page.locator('#country').select_option('KR')
+        expect(page.locator('#result-status')).to_have_text(f'{len(country_papers):,} papers in this view')
+        assert any(len(g['papers'][p['id']]['countries'])>1 and len(p['venues'])>1 for p in country_papers)
+        checks.append('Country filter includes international collaborations and deduplicates overlapping venues')
+        for v in VENUES:
+            if v!='SIGGRAPH':page.locator(f'#venue-filters input[value="{v}"]').uncheck()
+        page.locator('#year-from').fill('2023');page.locator('#year-to').fill('2023');page.locator('#year-to').press('Tab')
+        page.locator('#topic').select_option('Rendering')
+        page.locator('#min-citations').fill('5');page.locator('#sort').select_option('citations')
+        country_selection=[p for p in country_papers if 'SIGGRAPH' in p['venues'] and p['venue_years']['SIGGRAPH']==2023 and 'Rendering' in p['topics'] and p['citation_count'] is not None and p['citation_count']>=5]
+        assert country_selection
+        expect(page.locator('#result-status')).to_have_text(f'{len(country_selection):,} papers in this view')
+        page.evaluate('window.scrollTo(0, 0)');page.screenshot(path=str(out/'preview-country.png'),full_page=True)
+        with page.expect_download() as event:page.locator('#export-filtered').click()
+        event.value.save_as(str(out/'country-papers.csv'))
+        with (out/'country-papers.csv').open(encoding='utf-8-sig',newline='') as f:
+            rows=list(csv.DictReader(f))
+            assert {r['doi'] for r in rows}=={p['doi'] for p in country_selection}
+            assert all('KR' in r['affiliation_country_codes'].split('; ') and r['year']=='2023' for r in rows)
+            assert all('South Korea' in r['affiliation_countries'] for r in rows)
+        state=parse_qs(urlsplit(page.url).query)
+        assert state['country']==['KR'] and state['min-citations']==['5'] and state['sort']==['citations']
+        page.reload(wait_until='domcontentloaded')
+        expect(page.locator('#result-status')).to_have_text(f'{len(country_selection):,} papers in this view',timeout=180000)
+        expect(page.locator('#country')).to_have_value('KR');expect(page.locator('#min-citations')).to_have_value('5');expect(page.locator('#sort')).to_have_value('citations')
+        sample_country=country_selection[0]
+        page.locator('#subtopic').select_option(sample_country['subtopics'][0]);page.locator('#article-kind').select_option(sample_country['article_kind'])
+        page.locator('#query').fill(sample_country['doi']);expect(page.locator('#result-status')).to_have_text('1 papers in this view')
+        assert page.locator('#mini-chart text[text-anchor="end"]').all_text_contents()==['1','0']
+        checks.append('Country combines with venue, year, topic, subtopic, category, query and citations; CSV and shared URL agree')
+        page.locator('#reset').click();page.locator('#country').select_option('unknown')
+        unknown=sum(not g['papers'].get(p['id'],{}).get('countries') for p in papers)
+        expect(page.locator('#result-status')).to_have_text(f'{unknown:,} papers in this view')
+        page.locator('#reset').click()
+        expect(page.locator('#country')).to_have_value('');expect(page.locator('#sort')).to_have_value('newest')
+        expect(page.locator('#result-status')).to_have_text(f"{s['total']:,} papers in this view")
+        assert 'country' not in parse_qs(urlsplit(page.url).query)
+        checks.append('Unknown affiliations include unmatched papers; reset clears country and shared URL state')
         for v in VENUES:
             if v not in ['SIGGRAPH','TOG']:page.locator(f'#venue-filters input[value="{v}"]').uncheck()
         expected=sum(bool({'SIGGRAPH','TOG'}&set(p['venues'])) for p in papers)
@@ -68,7 +110,9 @@ def main():
             assert abs(float(r['share_percent'])-100*expected/len(selected))<1e-9
         page.locator('#research-papers').click();expect(page.locator('#result-status')).to_have_text(f'{expected:,} papers in this view')
         checks.append('Detailed CG topic counts, percentage export and paper drilldown agree')
+        assert not any(url.endswith('/data/world.json') for url in requests)
         page.get_by_role('link',name='Global research',exact=True).click();expect(page.locator('#world-map svg')).to_be_visible(timeout=60000)
+        assert sum(url.endswith('/data/geography.json') for url in requests)==2, 'Each of the two page loads should fetch affiliations once, shared by explorer and map'
         page.locator('#world-venue').select_option('SIGGRAPH');page.locator('#world-from').fill('2023');page.locator('#world-to').fill('2023');page.locator('#world-to').press('Tab')
         page.locator('#world-topic').select_option('Rendering')
         country=[p for p in selected if 'KR' in g['papers'].get(p['id'],{}).get('countries',{})]
@@ -93,9 +137,28 @@ def main():
         for view in ['Research trends','Research areas','About the data','Paper explorer']:
             page.get_by_role('link',name=view,exact=True).click();assert page.evaluate('document.documentElement.scrollWidth <= window.innerWidth'),view
         page.locator('#reset').click();page.locator('#page-size').select_option('25');page.screenshot(path=str(out/'preview-mobile.png'))
+        page.locator('#country').select_option('KR');expect(page.locator('#result-status')).to_have_text(f'{len(country_papers):,} papers in this view')
+        assert page.evaluate('document.documentElement.scrollWidth <= window.innerWidth')
+        page.locator('aside.filters').screenshot(path=str(out/'preview-country-mobile.png'))
         checks.append('All views fit the mobile viewport')
         page.get_by_role('link',name='About the data',exact=True).click();expect(page.locator('#coverage-body tr')).to_have_count(8)
         checks.append('Eight-venue provenance and coverage are visible')
+        failed=browser.new_page();failed.on('pageerror',lambda e:errors.append(str(e)))
+        failed.route('**/data/geography.json',lambda route:route.abort())
+        failed.goto(args.base_url+'?country=KR',wait_until='domcontentloaded')
+        expect(failed.locator('#result-status')).to_contain_text('Country data unavailable',timeout=180000)
+        expect(failed.locator('#export-filtered')).to_be_disabled();expect(failed.locator('#country-retry')).to_be_visible()
+        assert parse_qs(urlsplit(failed.url).query)['country']==['KR']
+        failed.unroute('**/data/geography.json');failed.locator('#country-retry').click()
+        expect(failed.locator('#result-status')).to_have_text(f'{len(country_papers):,} papers in this view',timeout=60000)
+        expect(failed.locator('#country')).to_have_value('KR');expect(failed.locator('#export-filtered')).to_be_enabled()
+        checks.append('Affiliation failure preserves the requested country, blocks misleading exports and supports retry')
+        failed.goto(args.base_url+'?country=ZZ',wait_until='domcontentloaded')
+        expect(failed.locator('#result-status')).to_have_text('0 papers in this view',timeout=180000)
+        expect(failed.locator('#country')).to_have_value('ZZ')
+        assert parse_qs(urlsplit(failed.url).query)['country']==['ZZ']
+        checks.append('Unindexed country URLs show no matches instead of silently broadening to all countries')
+        failed.close()
         browser.close()
     assert not errors,errors
     report={'base_url':args.base_url,'papers':len(papers),'passed':checks,'browser_errors':errors}

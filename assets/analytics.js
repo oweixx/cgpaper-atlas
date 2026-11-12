@@ -1,5 +1,5 @@
 'use strict';
-let geoData, worldMap, geographyPromise, researchRows = [], countryRows = [];
+let geoData, worldMap, affiliationPromise, worldMapPromise, researchRows = [], countryRows = [];
 const regionNames = new Intl.DisplayNames(['en'], {type:'region'});
 const countryName = code => {try{return regionNames.of(code)||code;}catch{return code;}};
 const percent = (n,d) => d ? 100*n/d : null;
@@ -66,9 +66,16 @@ function renderResearch(){
   lineChart('research-chart',series,measure);bars('research-bars',researchRows.slice(0,12),'data-research-topic');
   $('research-table').innerHTML=researchRows.map(t=>`<tr><td><button class="table-button" data-research-topic="${esc(t.name)}">${esc(t.name)}</button></td><td>${fmt(t.count)}</td><td>${pct(t.share)}</td></tr>`).join('')||'<tr><td colspan="3">No papers in this selection.</td></tr>';
 }
+async function loadAffiliations(){
+  if(!affiliationPromise)affiliationPromise=getJSON('data/geography.json').then(g=>{geoData=g;});
+  try{await affiliationPromise;}catch(e){affiliationPromise=null;throw e;}
+}
+async function loadWorldMap(){
+  if(!worldMapPromise)worldMapPromise=getJSON('data/world.json').then(w=>{worldMap=w;});
+  try{await worldMapPromise;}catch(e){worldMapPromise=null;throw e;}
+}
 async function loadGeography(){
-  if(!geographyPromise)geographyPromise=Promise.all([getJSON('data/geography.json'),getJSON('data/world.json')]).then(([g,w])=>{geoData=g;worldMap=w;});
-  try{await geographyPromise;}catch(e){geographyPromise=null;throw e;}
+  await Promise.all([loadAffiliations(),loadWorldMap()]);
 }
 function summarizeCountries(rows,topic){
   const groups=new Map();let matched=0,mapped=0,authorships=0,known=0;

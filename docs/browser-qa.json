@@ -3,6 +3,9 @@
   "papers": 27362,
   "passed": [
     "Eight approved venues and the full deduplicated corpus load",
+    "Country filter includes international collaborations and deduplicates overlapping venues",
+    "Country combines with venue, year, topic, subtopic, category, query and citations; CSV and shared URL agree",
+    "Unknown affiliations include unmatched papers; reset clears country and shared URL state",
     "SIGGRAPH and TOG union counts shared papers once",
     "Known Gaussian Splatting paper resolves once across conference and journal",
     "Empty results and reset work",
@@ -13,7 +16,9 @@
     "Country map, deduplicated author IDs, topic share and CSV agree with the affiliation snapshot",
     "Empty geographic selections are handled explicitly",
     "All views fit the mobile viewport",
-    "Eight-venue provenance and coverage are visible"
+    "Eight-venue provenance and coverage are visible",
+    "Affiliation failure preserves the requested country, blocks misleading exports and supports retry",
+    "Unindexed country URLs show no matches instead of silently broadening to all countries"
   ],
   "browser_errors": []
 }

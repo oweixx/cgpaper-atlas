@@ -1,0 +1,1096 @@
+{
+  "schema": 1,
+  "role": "Post-freeze v3.0 validation; labels recorded before predictions were displayed; not used to tune v3.0",
+  "annotator": "Codex AI, also the classifier developer; not independent expert ground truth",
+  "sampling": "Seed 60261116; 8 per primary venue, 4 before 2015 and 4 from 2015 onward; all 160 prior references and 30 initial diagnostic examples excluded. Equal venue/era allocation is not population-proportional.",
+  "rubric": "Central research targets and substantive methods; exclude incidental tools, routine evaluations, background comparisons, and demonstration applications alone. No inference of neural methods from synthesis alone. Historical non-research records labeled by available topical evidence.",
+  "classifier_sha256_before_sampling": {
+    "taxonomy.py": "0752373e84ec5269bf2422b7c9c1ba71af52bc4623519b31943e2205f0210539",
+    "taxonomy_rules.py": "0962a9fa811cc8171a8f907dd596f26bcd128038b670cc2549c9842b97e54451",
+    "topic_keyword_map.py": "51ef02efd241359fae38d4a6ccc836c67b3a91e7009aa925a1ff3601d889ea15"
+  },
+  "records": [
+    {
+      "id": "473543d2dbbc876ed6ed",
+      "title": "Computer graphics and the changing methodology for artists and designers (panel session)",
+      "venue": "SIGGRAPH",
+      "year": 1988,
+      "text_sha256": "be52fbb05e355d7c22fcb6f450fe32f2de3f93b96f540542669e9a5a8fba832f",
+      "topics": [],
+      "subtopics": [],
+      "rationale": "Broad artist/designer methodology panel; insufficient evidence for a specific research area.",
+      "abstract_available": false
+    },
+    {
+      "id": "5f064c7bef6790298b3a",
+      "title": "The digital Michelangelo project: 3D scanning of large statues",
+      "venue": "SIGGRAPH",
+      "year": 2000,
+      "text_sha256": "ab28f4b697254a93032e4da172f33d8e02e2a86aab3538001c916d0337cc43fd",
+      "topics": [
+        "Geometry & Modeling"
+      ],
+      "subtopics": [
+        "Shape modeling & reconstruction"
+      ],
+      "rationale": "Geometric digitization and reconstruction using existing scanning hardware.",
+      "abstract_available": true
+    },
+    {
+      "id": "554811b7497f65254fb1",
+      "title": "An example of a pragmatic approach to portable interactive graphics",
+      "venue": "SIGGRAPH",
+      "year": 1974,
+      "text_sha256": "ff676d27afe9626034d5c6701f725178262a029d3d23ac5fb110d49bb392bb4e",
+      "topics": [
+        "Systems & Real-Time Graphics"
+      ],
+      "subtopics": [
+        "Real-time rendering & engines"
+      ],
+      "rationale": "Portable interactive graphics software interface and standards.",
+      "abstract_available": true
+    },
+    {
+      "id": "cc0ee8902d9c29128a7e",
+      "title": "Efficient elasticity for character skinning with contact and collisions",
+      "venue": "SIGGRAPH",
+      "year": 2011,
+      "text_sha256": "248d52e9fb1906c3477df620444c4e5b5099b429d99d8963c029ff116e0e9df7",
+      "topics": [
+        "Animation & Simulation",
+        "Systems & Real-Time Graphics"
+      ],
+      "subtopics": [
+        "Character animation & motion",
+        "Deformation, cloth & hair",
+        "GPU & parallel computing"
+      ],
+      "rationale": "Elastic character skinning with a vectorized parallel computational method.",
+      "abstract_available": true
+    },
+    {
+      "id": "74eaca1c31ba3378dfc3",
+      "title": "Inverse Design of Discrete Interlocking Materials with Desired Mechanical Behavior",
+      "venue": "SIGGRAPH",
+      "year": 2025,
+      "text_sha256": "f71fe2961900ba60ad506b6a16774226cd6e259fca2af894de8a1d2353c0171d",
+      "topics": [
+        "Animation & Simulation",
+        "Fabrication & Materials"
+      ],
+      "subtopics": [
+        "Material & structure design",
+        "Fluids & physical simulation"
+      ],
+      "rationale": "Mechanical interlocking material design and contact simulation.",
+      "abstract_available": true
+    },
+    {
+      "id": "2aeaaad209897366a1bb",
+      "title": "Facial Microscopic Structures Synthesis from a Single Unconstrained Image",
+      "venue": "SIGGRAPH",
+      "year": 2025,
+      "text_sha256": "4136bd4224e65c36a1dcee8b9aa9026ea34ae0870f18c53ca901a1362b6c1525",
+      "topics": [
+        "Geometry & Modeling"
+      ],
+      "subtopics": [
+        "Shape modeling & reconstruction"
+      ],
+      "rationale": "Facial geometric microstructure synthesis; no learning method stated in the available title.",
+      "abstract_available": false
+    },
+    {
+      "id": "6987765d576961597388",
+      "title": "DualBrep: A Dual-Field Continuous Representation for B-rep Modelling",
+      "venue": "SIGGRAPH",
+      "year": 2026,
+      "text_sha256": "915c092152cb0fcb47a19d8e60603660201b7649455524217f17a44fa91e6743",
+      "topics": [
+        "Geometry & Modeling",
+        "Neural & Generative Graphics"
+      ],
+      "subtopics": [
+        "Meshes & geometry processing",
+        "Shape modeling & reconstruction",
+        "Generative models & diffusion",
+        "Learning for graphics"
+      ],
+      "rationale": "CAD boundary representation with learned flow-matching generation.",
+      "abstract_available": true
+    },
+    {
+      "id": "e169d25768c16c59c1d2",
+      "title": "Learning a family of motor skills from a single motion clip",
+      "venue": "SIGGRAPH",
+      "year": 2021,
+      "text_sha256": "27cb503688383da0c7b2e106b0384d17a9708185d595f678d70d75d16f337b6d",
+      "topics": [
+        "Animation & Simulation",
+        "Neural & Generative Graphics"
+      ],
+      "subtopics": [
+        "Character animation & motion",
+        "Learning for graphics"
+      ],
+      "rationale": "Reinforcement learning for character motor skills.",
+      "abstract_available": true
+    },
+    {
+      "id": "2d1d6251bff589f8d791",
+      "title": "Interactive localized liquid motion editing",
+      "venue": "SIGGRAPH Asia",
+      "year": 2013,
+      "text_sha256": "3debb5c9bb79deb4a7cbe9853c76c13786e3138fc828225faa5677f1f6deb284",
+      "topics": [
+        "Animation & Simulation",
+        "XR & Interaction"
+      ],
+      "subtopics": [
+        "Fluids & physical simulation",
+        "Interaction & interfaces"
+      ],
+      "rationale": "Localized fluid simulation control through an editing interface.",
+      "abstract_available": true
+    },
+    {
+      "id": "f28d30f9585d144eb575",
+      "title": "Cost-effective printing of 3D objects with skin-frame structures",
+      "venue": "SIGGRAPH Asia",
+      "year": 2013,
+      "text_sha256": "7d0dfe590cccbaf9be5005d6f397625f52e187ff06127ea80c19003d6eaac41c",
+      "topics": [
+        "Fabrication & Materials"
+      ],
+      "subtopics": [
+        "Computational fabrication",
+        "Material & structure design"
+      ],
+      "rationale": "3D printing with mechanically designed skin frames.",
+      "abstract_available": true
+    },
+    {
+      "id": "0d65b425e55055d8cb34",
+      "title": "Stretching and wiggling liquids",
+      "venue": "SIGGRAPH Asia",
+      "year": 2009,
+      "text_sha256": "e2b968ebfebb5839ae61b29693e8d38601457c38b18b4d58d31220c54e397b87",
+      "topics": [
+        "Animation & Simulation"
+      ],
+      "subtopics": [
+        "Fluids & physical simulation"
+      ],
+      "rationale": "Liquid motion simulation.",
+      "abstract_available": true
+    },
+    {
+      "id": "3a7b952e5313db98af9b",
+      "title": "Depth-of-field rendering with multiview synthesis",
+      "venue": "SIGGRAPH Asia",
+      "year": 2009,
+      "text_sha256": "102b8871aad1f3e8572f095b919f84290ac43ff0e7d1e99b929442749e4b58db",
+      "topics": [
+        "Rendering",
+        "Systems & Real-Time Graphics"
+      ],
+      "subtopics": [
+        "Light transport & sampling",
+        "Real-time rendering & engines",
+        "GPU & parallel computing"
+      ],
+      "rationale": "Real-time GPU multi-view depth-of-field rendering.",
+      "abstract_available": true
+    },
+    {
+      "id": "f920b7b4f885674b7670",
+      "title": "Barrier-Augmented Lagrangian for GPU-based Elastodynamic Contact",
+      "venue": "SIGGRAPH Asia",
+      "year": 2024,
+      "text_sha256": "43a55fe54506937f931e1b73e30013bb159e79e236c28aa6e61b2b1b56738660",
+      "topics": [
+        "Animation & Simulation",
+        "Systems & Real-Time Graphics"
+      ],
+      "subtopics": [
+        "Deformation, cloth & hair",
+        "GPU & parallel computing",
+        "Efficiency & compression"
+      ],
+      "rationale": "Elastic contact simulation with GPU and memory efficiency contributions.",
+      "abstract_available": true
+    },
+    {
+      "id": "4be8c5efdff2ea08d97d",
+      "title": "OptCuts: joint optimization of surface cuts and parameterization",
+      "venue": "SIGGRAPH Asia",
+      "year": 2018,
+      "text_sha256": "c2604a84ea96f89de75cef50d619637886e305eca787c4b38c12579c911c9731",
+      "topics": [
+        "Geometry & Modeling"
+      ],
+      "subtopics": [
+        "Meshes & geometry processing"
+      ],
+      "rationale": "Surface cutting and parameterization.",
+      "abstract_available": true
+    },
+    {
+      "id": "2463b8a127470c35b302",
+      "title": "EGG-Fusion: Efficient 3D Reconstruction with Geometry-aware Gaussian Surfel on the Fly",
+      "venue": "SIGGRAPH Asia",
+      "year": 2025,
+      "text_sha256": "0c442cb5bd9ff83c33a29668de8e399e5fd3efd7e8f6ebde7dfa5bce1171dd36",
+      "topics": [
+        "Rendering",
+        "Geometry & Modeling",
+        "Neural & Generative Graphics",
+        "Systems & Real-Time Graphics"
+      ],
+      "subtopics": [
+        "Shape modeling & reconstruction",
+        "Neural rendering & radiance fields",
+        "Light transport & sampling",
+        "Real-time rendering & engines"
+      ],
+      "rationale": "Gaussian-surface reconstruction and real-time neural rendering.",
+      "abstract_available": true
+    },
+    {
+      "id": "06aa479e68a988d39b36",
+      "title": "Scalable inside-out image-based rendering",
+      "venue": "SIGGRAPH Asia",
+      "year": 2016,
+      "text_sha256": "c4221ce9b1af03b14c4cf7eb0e3fd6387a306fabd607211fe65e9c7d02d29f99",
+      "topics": [
+        "Rendering",
+        "Geometry & Modeling",
+        "Systems & Real-Time Graphics"
+      ],
+      "subtopics": [
+        "Light transport & sampling",
+        "Shape modeling & reconstruction",
+        "Real-time rendering & engines"
+      ],
+      "rationale": "Geometry reconstruction and real-time image-based view rendering.",
+      "abstract_available": true
+    },
+    {
+      "id": "dd27fe5c880b41441526",
+      "title": "Interactive Simulation of the Human Eye Depth of Field and Its Correction by Spectacle Lenses",
+      "venue": "Eurographics",
+      "year": 2007,
+      "text_sha256": "cdaa3cebe15b07525366218607aa50cb7485e217e74e4b7472382dec58c0e11d",
+      "topics": [
+        "Rendering",
+        "Images & Computational Photography",
+        "Systems & Real-Time Graphics"
+      ],
+      "subtopics": [
+        "Light transport & sampling",
+        "Cameras, optics & displays",
+        "Real-time rendering & engines",
+        "GPU & parallel computing"
+      ],
+      "rationale": "Real-time optical rendering of spectacle lenses with GPU shaders.",
+      "abstract_available": true
+    },
+    {
+      "id": "71f50bcf92931fc6a205",
+      "title": "Stylized and Performative Gaze for Character Animation",
+      "venue": "Eurographics",
+      "year": 2013,
+      "text_sha256": "01c5bcddf18e1de300777f3c450da2f62ea7c803c42b4119c9616ad5d982cb98",
+      "topics": [
+        "Animation & Simulation"
+      ],
+      "subtopics": [
+        "Character animation & motion"
+      ],
+      "rationale": "Character gaze animation; the evaluation alone is not a perception contribution.",
+      "abstract_available": true
+    },
+    {
+      "id": "e3168c71cfe0d59270f9",
+      "title": "Scale-Invariant Minimum-Cost Curves: Fair and Robust Design Implements",
+      "venue": "Eurographics",
+      "year": 1993,
+      "text_sha256": "6b9ac7fc42f1805858933f261be22905260e52b89bf0be410f21732750056e23",
+      "topics": [
+        "Geometry & Modeling"
+      ],
+      "subtopics": [
+        "Meshes & geometry processing",
+        "Shape modeling & reconstruction"
+      ],
+      "rationale": "Geometric curve design.",
+      "abstract_available": true
+    },
+    {
+      "id": "9e28a433c60d18538d1c",
+      "title": "Analytic Anti-Aliasing of Linear Functions on Polytopes",
+      "venue": "Eurographics",
+      "year": 2012,
+      "text_sha256": "0e35ad768aef902c8fcc5fac72d072a6ff1368aeed79a97f2f622dac35312571",
+      "topics": [
+        "Rendering",
+        "Systems & Real-Time Graphics"
+      ],
+      "subtopics": [
+        "Light transport & sampling",
+        "Real-time rendering & engines",
+        "GPU & parallel computing"
+      ],
+      "rationale": "Analytic GPU rasterization and anti-aliasing; polytopes are input geometry.",
+      "abstract_available": true
+    },
+    {
+      "id": "930a8a79d3e7a3b4b258",
+      "title": "Interactive Videos: Plausible Video Editing using Sparse Structure Points",
+      "venue": "Eurographics",
+      "year": 2016,
+      "text_sha256": "13e5aebcfbb8797b5c3e48ad05a1bef522af988607db3148221f04aa3e3ccae0",
+      "topics": [
+        "Rendering",
+        "Images & Computational Photography",
+        "XR & Interaction"
+      ],
+      "subtopics": [
+        "Video & image editing",
+        "Light transport & sampling",
+        "Interaction & interfaces"
+      ],
+      "rationale": "Interactive video editing and image-based rendering.",
+      "abstract_available": true
+    },
+    {
+      "id": "0ad364dc4def45019ea3",
+      "title": "Anisotropic Diffusion Descriptors",
+      "venue": "Eurographics",
+      "year": 2016,
+      "text_sha256": "5210c3ba8e228131ebdfaa1e8f67f1665238aee8426f9a6668a76325855156eb",
+      "topics": [
+        "Geometry & Modeling",
+        "Neural & Generative Graphics"
+      ],
+      "subtopics": [
+        "Meshes & geometry processing",
+        "Learning for graphics"
+      ],
+      "rationale": "Learned shape descriptors using geometric diffusion, not generative diffusion.",
+      "abstract_available": true
+    },
+    {
+      "id": "c2bb70d07bd5f4f7e04f",
+      "title": "State of the Art on Computational Design of Assemblies with Rigid Parts",
+      "venue": "Eurographics",
+      "year": 2021,
+      "text_sha256": "f4f15bac6d83beb164a09ed5d56bc679b50379d1e24854a6a4b2417eb9806828",
+      "topics": [
+        "Geometry & Modeling",
+        "Fabrication & Materials"
+      ],
+      "subtopics": [
+        "Computational fabrication",
+        "Material & structure design",
+        "Shape modeling & reconstruction"
+      ],
+      "rationale": "Geometric and structural design of fabricated rigid assemblies.",
+      "abstract_available": true
+    },
+    {
+      "id": "7c863edf0799121ec946",
+      "title": "Strokes2Surface: Recovering Curve Networks From 4D Architectural Design Sketches",
+      "venue": "Eurographics",
+      "year": 2024,
+      "text_sha256": "336afe4e19a5aa1f1f189a3af84838928fbe3b387fe485c8ea2a200510b6e0e2",
+      "topics": [
+        "Geometry & Modeling",
+        "Neural & Generative Graphics",
+        "XR & Interaction"
+      ],
+      "subtopics": [
+        "Meshes & geometry processing",
+        "Shape modeling & reconstruction",
+        "Interaction & interfaces",
+        "Learning for graphics"
+      ],
+      "rationale": "Sketch interface, learned stroke classification, and surface reconstruction.",
+      "abstract_available": true
+    },
+    {
+      "id": "47881d5d76d9566f001a",
+      "title": "Digital Camouflage Images Using Two-scale Decomposition",
+      "venue": "Pacific Graphics",
+      "year": 2012,
+      "text_sha256": "8021158cdc0b97fa4c3dd03ebf76439de3642c40483ca5c29caacd3318fdc9e0",
+      "topics": [
+        "Images & Computational Photography"
+      ],
+      "subtopics": [
+        "Image processing & restoration",
+        "Video & image editing"
+      ],
+      "rationale": "Image processing and editing inspired by camouflage; no new perceptual study.",
+      "abstract_available": true
+    },
+    {
+      "id": "34396aa05e83f9f95866",
+      "title": "Dual Brep-CSG Collision Detection for General Polyhedra",
+      "venue": "Pacific Graphics",
+      "year": 2001,
+      "text_sha256": "d673661de3f52442204d67d8612b70b7c1c190f522a3b4371147f2c2613012e2",
+      "topics": [
+        "Geometry & Modeling",
+        "Animation & Simulation"
+      ],
+      "subtopics": [
+        "Meshes & geometry processing",
+        "Fluids & physical simulation"
+      ],
+      "rationale": "Boundary representation operations for geometric collision computation.",
+      "abstract_available": true
+    },
+    {
+      "id": "79b59b5dcb1278ef8911",
+      "title": "Facial Expression Space Learning",
+      "venue": "Pacific Graphics",
+      "year": 2002,
+      "text_sha256": "32b98e72a55c59d8f4ebd4300e4097a942417270a65af7ae239ee7ed47811315",
+      "topics": [
+        "Animation & Simulation",
+        "Neural & Generative Graphics",
+        "Images & Computational Photography"
+      ],
+      "subtopics": [
+        "Character animation & motion",
+        "Learning for graphics",
+        "Video & image editing"
+      ],
+      "rationale": "Learned facial animation and video expression editing.",
+      "abstract_available": true
+    },
+    {
+      "id": "3e589b1361fe4e355483",
+      "title": "Interactive sketch generation",
+      "venue": "Pacific Graphics",
+      "year": 2005,
+      "text_sha256": "8725561a6e6447d6f70b1f9f6da192cefb3a73423ee27f03241418b45b04b79f",
+      "topics": [
+        "XR & Interaction"
+      ],
+      "subtopics": [
+        "Interaction & interfaces"
+      ],
+      "rationale": "Interactive sketch generation; no learning method stated in the available title.",
+      "abstract_available": false
+    },
+    {
+      "id": "f96e21cb4ad69ea96a12",
+      "title": "Fast Global Illumination with Discrete Stochastic Microfacets Using a Filterable Model",
+      "venue": "Pacific Graphics",
+      "year": 2018,
+      "text_sha256": "5ccf8ee7eaf8a0d1938b2a1531fc7b1934930c3e924e8635190310df25fdbbf2",
+      "topics": [
+        "Rendering"
+      ],
+      "subtopics": [
+        "Light transport & sampling",
+        "Shading & appearance"
+      ],
+      "rationale": "Microfacet appearance and light transport; generic speed claims alone do not establish a systems contribution.",
+      "abstract_available": true
+    },
+    {
+      "id": "3c3c23769038ab92c093",
+      "title": "Planar Shape Interpolation Based On Teichmüller Mapping",
+      "venue": "Pacific Graphics",
+      "year": 2016,
+      "text_sha256": "e08d4bf270f774f9f7639df5360190ade5ea22396aba9b89910375660fb228bd",
+      "topics": [
+        "Geometry & Modeling"
+      ],
+      "subtopics": [
+        "Meshes & geometry processing",
+        "Shape modeling & reconstruction"
+      ],
+      "rationale": "Planar geometric shape interpolation.",
+      "abstract_available": true
+    },
+    {
+      "id": "93c5f8e895c00af17168",
+      "title": "𝒢-Style: Stylized Gaussian Splatting",
+      "venue": "Pacific Graphics",
+      "year": 2024,
+      "text_sha256": "dc2a0d95b72bdbda8e85842a93f8d047acb089116f907e5f1ca70269f8c21961",
+      "topics": [
+        "Rendering",
+        "Neural & Generative Graphics",
+        "Images & Computational Photography"
+      ],
+      "subtopics": [
+        "Neural rendering & radiance fields",
+        "Light transport & sampling",
+        "Video & image editing"
+      ],
+      "rationale": "Gaussian neural rendering for stylization.",
+      "abstract_available": true
+    },
+    {
+      "id": "6037c200043287b8b4f3",
+      "title": "Authoring Terrains with Spatialised Style",
+      "venue": "Pacific Graphics",
+      "year": 2023,
+      "text_sha256": "53795ea6bda2455dbda4645d0145d2dc5a22b19f0b8ba275c040f774169463f6",
+      "topics": [
+        "Geometry & Modeling",
+        "Neural & Generative Graphics",
+        "XR & Interaction"
+      ],
+      "subtopics": [
+        "Procedural & scene modeling",
+        "Generative models & diffusion",
+        "Interaction & interfaces"
+      ],
+      "rationale": "Generative terrain modeling with interactive authoring.",
+      "abstract_available": true
+    },
+    {
+      "id": "53fc5a9c925d48f05e5c",
+      "title": "Screened poisson surface reconstruction",
+      "venue": "TOG",
+      "year": 2013,
+      "text_sha256": "a9c3a562782b669e450490175331df4e53d43e46b08841f56da28ed9d938ddb2",
+      "topics": [
+        "Geometry & Modeling"
+      ],
+      "subtopics": [
+        "Meshes & geometry processing",
+        "Shape modeling & reconstruction"
+      ],
+      "rationale": "Geometric surface reconstruction.",
+      "abstract_available": true
+    },
+    {
+      "id": "f858cb3130c029a31b41",
+      "title": "The Simplest Subdivision Scheme for Smoothing Polyhedra",
+      "venue": "TOG",
+      "year": 1997,
+      "text_sha256": "e2a2036898fd29cb9027c8808617713f8cf2a4d88e7c9329b515cbc76d25ada2",
+      "topics": [
+        "Geometry & Modeling"
+      ],
+      "subtopics": [
+        "Meshes & geometry processing"
+      ],
+      "rationale": "Polyhedral subdivision.",
+      "abstract_available": true
+    },
+    {
+      "id": "8f5d86d32c95be280438",
+      "title": "A tangent subdivision scheme",
+      "venue": "TOG",
+      "year": 2006,
+      "text_sha256": "cabb7d37b1b68b86590aed7037c87a486bd68b4b0bd06fca0a4045f2809e2d82",
+      "topics": [
+        "Geometry & Modeling"
+      ],
+      "subtopics": [
+        "Meshes & geometry processing"
+      ],
+      "rationale": "Spline subdivision and geometric smoothness.",
+      "abstract_available": true
+    },
+    {
+      "id": "3350452a1cfb6fdec636",
+      "title": "Image and video upscaling from local self-examples",
+      "venue": "TOG",
+      "year": 2011,
+      "text_sha256": "2618e25de7311d9a0a2530e988e7bcfe0ca62b219e5a8e8efef5af752968f955",
+      "topics": [
+        "Images & Computational Photography"
+      ],
+      "subtopics": [
+        "Image processing & restoration",
+        "Video & image editing"
+      ],
+      "rationale": "Image/video super-resolution; incidental GPU implementation is not a separate parallel method.",
+      "abstract_available": true
+    },
+    {
+      "id": "efe99e6436c4b9a78827",
+      "title": "As-Continuous-As-Possible Extrusion-Based Fabrication of Surface Models",
+      "venue": "TOG",
+      "year": 2023,
+      "text_sha256": "35dd7075231bab769fe3ad07de62ec2e8d2b82f1b33096a265c2c00a5670243b",
+      "topics": [
+        "Fabrication & Materials"
+      ],
+      "subtopics": [
+        "Computational fabrication"
+      ],
+      "rationale": "Continuous toolpaths for extrusion fabrication.",
+      "abstract_available": true
+    },
+    {
+      "id": "69afc9193bb61626d6dc",
+      "title": "Deformation Capture via Soft and Stretchable Sensor Arrays",
+      "venue": "TOG",
+      "year": 2019,
+      "text_sha256": "d7ee52fbc4538db1a1768958e6390ccedf19b9d66270afc74d8e93ca98b6527a",
+      "topics": [
+        "Geometry & Modeling",
+        "Animation & Simulation",
+        "Neural & Generative Graphics",
+        "Fabrication & Materials"
+      ],
+      "subtopics": [
+        "Computational fabrication",
+        "Character animation & motion",
+        "Shape modeling & reconstruction",
+        "Learning for graphics"
+      ],
+      "rationale": "Fabricated stretch sensors, motion/shape recovery, and learned regression.",
+      "abstract_available": true
+    },
+    {
+      "id": "f48d9300a7e5ca576839",
+      "title": "Parsing-Conditioned Anime Translation: A New Dataset and Method",
+      "venue": "TOG",
+      "year": 2023,
+      "text_sha256": "3c0288fbd7bf334c97e20bc98078e9c12b87076729ea21ce24dade61cb1b1535",
+      "topics": [
+        "Neural & Generative Graphics",
+        "Images & Computational Photography",
+        "Perception & Evaluation"
+      ],
+      "subtopics": [
+        "Video & image editing",
+        "Generative models & diffusion",
+        "Quality, metrics & benchmarks"
+      ],
+      "rationale": "Generative anime image translation with a contributed dataset.",
+      "abstract_available": true
+    },
+    {
+      "id": "fa142db8a7b963884953",
+      "title": "HAvatar: High-fidelity Head Avatar via Facial Model Conditioned Neural Radiance Field",
+      "venue": "TOG",
+      "year": 2024,
+      "text_sha256": "91007d4ff62542653c9984eff53f0bef3da1644e9642f49f6d403450e3c85ac3",
+      "topics": [
+        "Rendering",
+        "Geometry & Modeling",
+        "Animation & Simulation",
+        "Neural & Generative Graphics"
+      ],
+      "subtopics": [
+        "Character animation & motion",
+        "Shape modeling & reconstruction",
+        "Neural rendering & radiance fields",
+        "Light transport & sampling"
+      ],
+      "rationale": "Animated head geometry and neural rendering; an internal image generator is not a separate editing task.",
+      "abstract_available": true
+    },
+    {
+      "id": "8ece218d6002332340fc",
+      "title": "Travel-Route-Centered Metro Map Layout and Annotation",
+      "venue": "CGF",
+      "year": 2012,
+      "text_sha256": "97fe6f99f47c69d9615153f35ea3024d381569b35a50c265d96db73230a5126d",
+      "topics": [
+        "Visualization & Visual Analytics"
+      ],
+      "subtopics": [
+        "Information visualization"
+      ],
+      "rationale": "Information visualization through metro map layout.",
+      "abstract_available": true
+    },
+    {
+      "id": "05383ccc8be5e651fa0e",
+      "title": "Report on the Third Eurographics Workshop on Intelligent CAD",
+      "venue": "CGF",
+      "year": 1989,
+      "text_sha256": "bf65bff4c3cc2b24875dd048dab1c678f94c9e5ea7ad42f8057e33363016af40",
+      "topics": [
+        "Geometry & Modeling"
+      ],
+      "subtopics": [
+        "Shape modeling & reconstruction"
+      ],
+      "rationale": "CAD workshop report: title supports geometric modeling, although this is not a research paper.",
+      "abstract_available": false
+    },
+    {
+      "id": "3583fd3fd1edd4ecb933",
+      "title": "A Hybrid Approach for Stroke-Based Letterform Composition Including Outline-Based Methods",
+      "venue": "CGF",
+      "year": 2000,
+      "text_sha256": "94b2e64d9380661b973c07e9446522908a651b89e70d3767e2c455864f6755be",
+      "topics": [
+        "Geometry & Modeling"
+      ],
+      "subtopics": [
+        "Shape modeling & reconstruction"
+      ],
+      "rationale": "Geometric letterform design, not character animation.",
+      "abstract_available": true
+    },
+    {
+      "id": "196a0d491c579e83e8d1",
+      "title": "Computer Graphics and CAD Literature A Keyword‐Indexed Bibliography",
+      "venue": "CGF",
+      "year": 1987,
+      "text_sha256": "c192f8048509e0f0b412ae2e1cd5eff2ea2a62bb1b560c890e40170972147e71",
+      "topics": [
+        "Geometry & Modeling"
+      ],
+      "subtopics": [
+        "Shape modeling & reconstruction"
+      ],
+      "rationale": "CAD bibliography: topical evidence from the title, not a research paper.",
+      "abstract_available": false
+    },
+    {
+      "id": "048a932a28ad086906db",
+      "title": "SUPQA: LLM-based Geo-Visualization for Subjective Urban Performance Question-Answering",
+      "venue": "CGF",
+      "year": 2025,
+      "text_sha256": "489c2ddcf5b4d68474cf06655d1dde98667cc538eeb0a07379ea11a6db18da04",
+      "topics": [
+        "Neural & Generative Graphics",
+        "Visualization & Visual Analytics"
+      ],
+      "subtopics": [
+        "Information visualization",
+        "Visual analytics & data exploration",
+        "Learning for graphics"
+      ],
+      "rationale": "Geovisual analytics and LLM-based question answering as a method.",
+      "abstract_available": true
+    },
+    {
+      "id": "64073c0b5c34e85b094c",
+      "title": "On-The-Fly Tracking of Flame Surfaces for the Visual Analysis of Combustion Processes",
+      "venue": "CGF",
+      "year": 2018,
+      "text_sha256": "26f467d8a0f3eb0e9d08d421f295bc1458d32c336324bccdf4ce47e2d76b28da",
+      "topics": [
+        "Visualization & Visual Analytics",
+        "Systems & Real-Time Graphics"
+      ],
+      "subtopics": [
+        "Scientific & volume visualization",
+        "Visual analytics & data exploration",
+        "GPU & parallel computing",
+        "Efficiency & compression"
+      ],
+      "rationale": "Scientific visual analytics with distributed and memory-efficient online flame tracking.",
+      "abstract_available": true
+    },
+    {
+      "id": "22c9b384f54f1572ff2d",
+      "title": "A Survey on Visual Traffic Simulation: Models, Evaluations, and Applications in Autonomous Driving",
+      "venue": "CGF",
+      "year": 2020,
+      "text_sha256": "9a4edd772320f1802aa9f5a891832c6f4b8813cffc0662345f06a640ef686a8b",
+      "topics": [
+        "Animation & Simulation"
+      ],
+      "subtopics": [
+        "Character animation & motion",
+        "Fluids & physical simulation"
+      ],
+      "rationale": "Traffic animation and simulation survey; VR is only an application.",
+      "abstract_available": true
+    },
+    {
+      "id": "bd29be2d32d5f277e235",
+      "title": "Kyrix: Interactive Pan/Zoom Visualizations at Scale",
+      "venue": "CGF",
+      "year": 2019,
+      "text_sha256": "79f76c181c62ecb94924776c24e2d4a42ec6cc17bb639b56718609780da78ff6",
+      "topics": [
+        "Visualization & Visual Analytics",
+        "XR & Interaction"
+      ],
+      "subtopics": [
+        "Information visualization",
+        "Visual analytics & data exploration",
+        "Interaction & interfaces"
+      ],
+      "rationale": "Scalable information visualization with pan/zoom interaction; database backend alone is not graphics compression.",
+      "abstract_available": true
+    },
+    {
+      "id": "2a7cba63f1957fed75fd",
+      "title": "Interactive Mesh Cutting Using Constrained Random Walks",
+      "venue": "TVCG",
+      "year": 2011,
+      "text_sha256": "80e05348eac60ebe3702244066eda2be9bb7e32eee3c95fe662c57880e0b9f12",
+      "topics": [
+        "Geometry & Modeling",
+        "XR & Interaction"
+      ],
+      "subtopics": [
+        "Meshes & geometry processing",
+        "Interaction & interfaces"
+      ],
+      "rationale": "Geometric mesh segmentation and a novel sketch/constraint interface.",
+      "abstract_available": true
+    },
+    {
+      "id": "f18fb9fbe2d7357484ee",
+      "title": "Splatterplots: Overcoming Overdraw in Scatter Plots",
+      "venue": "TVCG",
+      "year": 2013,
+      "text_sha256": "58312d369bcbf157f009027220fd99437c96b16ea7a6ce6b0ea38c5a5a40c7a3",
+      "topics": [
+        "Visualization & Visual Analytics",
+        "Systems & Real-Time Graphics"
+      ],
+      "subtopics": [
+        "Information visualization",
+        "GPU & parallel computing"
+      ],
+      "rationale": "Information visualization of dense scatter data with GPU computation techniques.",
+      "abstract_available": true
+    },
+    {
+      "id": "28c3bb06d2ec4f189ac0",
+      "title": "Hotmap: Looking at Geographic Attention",
+      "venue": "TVCG",
+      "year": 2007,
+      "text_sha256": "224bdeae9bb78aabb393f133266960183f7c932b2fa3113e55a5216a2d7c9e64",
+      "topics": [
+        "Visualization & Visual Analytics"
+      ],
+      "subtopics": [
+        "Information visualization",
+        "Visual analytics & data exploration"
+      ],
+      "rationale": "Geographic information visualization for interactive usage analysis.",
+      "abstract_available": true
+    },
+    {
+      "id": "22ce801073ac99743738",
+      "title": "Dense and Dynamic 3D Selection for Game-Based Virtual Environments",
+      "venue": "TVCG",
+      "year": 2012,
+      "text_sha256": "4436dbdc3d32c2f77fe1f6c9d97433b9ea5a0a418be7994e3bd6944081634b71",
+      "topics": [
+        "XR & Interaction",
+        "Perception & Evaluation"
+      ],
+      "subtopics": [
+        "Interaction & interfaces",
+        "User studies & evaluation"
+      ],
+      "rationale": "3D selection interaction techniques and a central comparative user study.",
+      "abstract_available": true
+    },
+    {
+      "id": "d0c36b751ba39a83e51a",
+      "title": "The Impact of Navigation on Proxemics in an Immersive Virtual Environment with Conversational Agents",
+      "venue": "TVCG",
+      "year": 2025,
+      "text_sha256": "8cb6541a5a24f7becc5332d1c043bde822a1da572feac9774730bc4606f6c804",
+      "topics": [
+        "XR & Interaction",
+        "Perception & Evaluation"
+      ],
+      "subtopics": [
+        "Virtual & augmented reality",
+        "Interaction & interfaces",
+        "Visual perception",
+        "User studies & evaluation"
+      ],
+      "rationale": "Social VR navigation, spatial perception, and a central participant experiment.",
+      "abstract_available": true
+    },
+    {
+      "id": "78cf8c0d18171115c1df",
+      "title": "Revisiting the Modifiable Areal Unit Problem in Deep Traffic Prediction with Visual Analytics",
+      "venue": "TVCG",
+      "year": 2021,
+      "text_sha256": "70d0d27a69e61f337ad694cdad7f2af63aeb200c7eca0bd88e256bb65db17640",
+      "topics": [
+        "Visualization & Visual Analytics"
+      ],
+      "subtopics": [
+        "Information visualization",
+        "Visual analytics & data exploration"
+      ],
+      "rationale": "Visual analytics of traffic prediction models; deep learning is an analysis target.",
+      "abstract_available": true
+    },
+    {
+      "id": "fd18a6139beb6c63062f",
+      "title": "booc.io: An Education System with Hierarchical Concept Maps and Dynamic Non-linear Learning Plans",
+      "venue": "TVCG",
+      "year": 2017,
+      "text_sha256": "17ae53cdce7f782617d2b826847244e8000c59a1baadeb354ac76e661b5d7a67",
+      "topics": [
+        "Visualization & Visual Analytics",
+        "XR & Interaction"
+      ],
+      "subtopics": [
+        "Information visualization",
+        "Interaction & interfaces"
+      ],
+      "rationale": "Hierarchical educational information visualization and navigation interface.",
+      "abstract_available": true
+    },
+    {
+      "id": "53107e1a366a5d997b76",
+      "title": "A Design Space of Vision Science Methods for Visualization Research",
+      "venue": "TVCG",
+      "year": 2021,
+      "text_sha256": "94a7a038588e81e406dbbfe5b59045611348e6381c5a649175df1874ff84c840",
+      "topics": [
+        "Visualization & Visual Analytics",
+        "Perception & Evaluation"
+      ],
+      "subtopics": [
+        "Information visualization",
+        "Visual perception",
+        "User studies & evaluation"
+      ],
+      "rationale": "Perceptual experimental methods and evaluation design for visualization.",
+      "abstract_available": true
+    },
+    {
+      "id": "9611ae761cf2a2e39415",
+      "title": "CoMEdiA: Conceptualisation and realisation of a cooperative hypermedia editing architecture",
+      "venue": "C&G",
+      "year": 1993,
+      "text_sha256": "376860ce8d7b21665977a20e61960d4f0866d931ce2081841fb0ff790bd4bcf6",
+      "topics": [
+        "XR & Interaction"
+      ],
+      "subtopics": [
+        "Interaction & interfaces"
+      ],
+      "rationale": "Cooperative hypermedia editing architecture; title supports collaborative interaction.",
+      "abstract_available": false
+    },
+    {
+      "id": "587050bd9bd3b95ee897",
+      "title": "Interacting with proactive public displays",
+      "venue": "C&G",
+      "year": 2003,
+      "text_sha256": "c9535a7e38f7e756b35882e768fa5e1618bbff2661f1ff46408867f5148dd3a7",
+      "topics": [
+        "XR & Interaction"
+      ],
+      "subtopics": [
+        "Interaction & interfaces"
+      ],
+      "rationale": "Interaction with public displays; no optical display design stated.",
+      "abstract_available": false
+    },
+    {
+      "id": "6969bd783d2bb1fdca0f",
+      "title": "On the intersection of two planar polygons",
+      "venue": "C&G",
+      "year": 1988,
+      "text_sha256": "4465007fccf4521d76b1e1d69b9ddd19c445a078bef8c25039de1ad771515741",
+      "topics": [
+        "Geometry & Modeling"
+      ],
+      "subtopics": [
+        "Meshes & geometry processing"
+      ],
+      "rationale": "Planar polygon intersection.",
+      "abstract_available": false
+    },
+    {
+      "id": "65ccf2ef7e65c1316c9e",
+      "title": "An interpolating piecewise bicubic surface with shape parameters",
+      "venue": "C&G",
+      "year": 2001,
+      "text_sha256": "b428719ff2faed75b5ec73d33b5e40551dc6ecf61464c396d0c301a0f3b46989",
+      "topics": [
+        "Geometry & Modeling"
+      ],
+      "subtopics": [
+        "Meshes & geometry processing",
+        "Shape modeling & reconstruction"
+      ],
+      "rationale": "Bicubic geometric surface interpolation.",
+      "abstract_available": false
+    },
+    {
+      "id": "70498852a5dbef921b31",
+      "title": "Real-time rendering and physics of complex dynamic terrains modeled as CSG trees of DEMs carved with spheres",
+      "venue": "C&G",
+      "year": 2023,
+      "text_sha256": "f5a87e1316093269c1f82f7fff6401fdb1c62e7cd39808c8600b29b13a6e2c08",
+      "topics": [
+        "Rendering",
+        "Geometry & Modeling",
+        "Animation & Simulation",
+        "Systems & Real-Time Graphics"
+      ],
+      "subtopics": [
+        "Meshes & geometry processing",
+        "Procedural & scene modeling",
+        "Light transport & sampling",
+        "Fluids & physical simulation",
+        "Real-time rendering & engines",
+        "GPU & parallel computing"
+      ],
+      "rationale": "CSG terrain geometry, physical interaction, real-time rendering, and GPU communication strategy.",
+      "abstract_available": true
+    },
+    {
+      "id": "5bb7fc789579c667e151",
+      "title": "Guided spiral visualization for periodic time series and residual analysis",
+      "venue": "C&G",
+      "year": 2026,
+      "text_sha256": "558cc66bd992abbf7b34f869cb82a9e5a616a513fc6ece15cd7ce201be95e723",
+      "topics": [
+        "Visualization & Visual Analytics"
+      ],
+      "subtopics": [
+        "Information visualization",
+        "Visual analytics & data exploration"
+      ],
+      "rationale": "Interactive time-series information visualization and residual analytics.",
+      "abstract_available": true
+    },
+    {
+      "id": "90e04a1e1dbcbf4be656",
+      "title": "Diverse non-homogeneous texture synthesis from a single exemplar",
+      "venue": "C&G",
+      "year": 2024,
+      "text_sha256": "5501baa32868a780a82a2c6e0fd40e372258ae5025935c9eb11c72772fc22440",
+      "topics": [
+        "Fabrication & Materials"
+      ],
+      "subtopics": [
+        "Texture & pattern design"
+      ],
+      "rationale": "Texture synthesis; no learning method stated in the available title.",
+      "abstract_available": false
+    },
+    {
+      "id": "a6fed6d00cbf56fcaf63",
+      "title": "Improved anti-aliasing for Euclidean distance transform shadow mapping",
+      "venue": "C&G",
+      "year": 2018,
+      "text_sha256": "3cb1645efe884ef0c5045a181375f7fd900494e2b187ed3b3fadbc6c67584c07",
+      "topics": [
+        "Rendering"
+      ],
+      "subtopics": [
+        "Light transport & sampling"
+      ],
+      "rationale": "Shadow rendering and anti-aliasing.",
+      "abstract_available": false
+    }
+  ]
+}

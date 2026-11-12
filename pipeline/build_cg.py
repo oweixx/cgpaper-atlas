@@ -6,7 +6,8 @@ from openpyxl import Workbook
 from cg_config import ROOT,DATA,VENUES,YEAR
 from network import save
 from metadata import merge_records
-from taxonomy import classify,TAXONOMY,TOPICS,SUBTOPICS
+from taxonomy import classify_with_evidence,TAXONOMY,TOPICS,SUBTOPICS,VERSION,UNCLASSIFIED
+from taxonomy_v1 import classify as baseline_classify
 from geography import build_geography
 
 def load(name,default=None):
@@ -14,7 +15,7 @@ def load(name,default=None):
     return json.loads(path.read_text(encoding='utf-8')) if path.exists() else default
 
 def exports(papers,summary):
-    columns=['id','venue','venues','year','publication_year','venue_years','venue_evidence','source_years','title','authors','article_kind','topics','subtopics','doi','url','pdf_url','abstract','citation_count','citation_source','citation_updated','sources']
+    columns=['id','venue','venues','year','publication_year','venue_years','venue_evidence','source_years','title','authors','article_kind','topics','subtopics','classification_version','classification_basis','doi','url','pdf_url','abstract','citation_count','citation_source','citation_updated','sources']
     def values(p):
         result=[]
         for c in columns:
@@ -48,13 +49,22 @@ def main():
         assert ledger['openalex'].get('complete'), 'Finish OpenAlex collection before publishing'
     papers,excluded,identity,issues=merge_records(dblp,crossref)
     enrichment=load('enrichment',{})
+    topic_metadata=load('topic_metadata',{})
+    if not args.draft:assert load('coverage_topics',{}).get('complete'), 'Finish topic metadata collection before publishing'
+    evidence_shards={c:{} for c in '0123456789abcdef'}
+    old_topics={};classification_counts=Counter()
     for p in papers:
         e=next((enrichment[d] for d in [p['doi']]+p['doi_aliases'] if d in enrichment),None)
         if e:
             for key in ['openalex_id','citation_count','citation_source','citation_updated','pdf_url']:p[key]=e[key]
             if not p['abstract']:p['abstract']=e['abstract']
             p['sources']=sorted(set(p['sources']+['OpenAlex']))
-        p['topics'],p['subtopics']=classify(p['title'])
+        old_topics[p['id']]=baseline_classify(p['title'])[0]
+        classification=classify_with_evidence(p['title'],p['abstract'],topic_metadata.get(p['doi']))
+        p['topics'],p['subtopics']=classification.pop('topics'),classification.pop('subtopics')
+        p['classification_version']=classification['version'];p['classification_basis']=classification['basis']
+        classification_counts[classification['basis']]+=1
+        evidence_shards[p['id'][0]][p['id']]=classification
     papers.sort(key=lambda p:(-p['year'],p['venue'],p['title'].lower()))
     assert len({p['id'] for p in papers})==len(papers)
     summary={'built_at':datetime.now(timezone.utc).isoformat(),'total':len(papers),'min_year':min(p['year'] for p in papers),
@@ -67,7 +77,8 @@ def main():
              'topics':TOPICS+['Other / Unclassified'],'subtopics':SUBTOPICS+['Other / Unclassified'],'taxonomy':{k:list(v) for k,v in TAXONOMY.items()},
              'coverage_note':'Eight approved publication venues. Journal coverage includes all in-scope research articles, including special issues associated with other conferences. Those conferences are not collected independently. DBLP and four exact Crossref ISSN inventories are audited. Historical indexing gaps and current-year publication delays remain; no claim of complete worldwide CG coverage.',
              'citation_note':'OpenAlex global indexed citation counts, matched by exact DOI. These include citations from outside this CG collection. Not Google Scholar counts or CG-only citations. N/A means unavailable; zero means the source returned zero. Retrieval time is recorded per paper.',
-             'topic_note':'10 CG research areas and 30 subtopics assigned by title-only keyword rules. Labels overlap, may be incorrect or incomplete, and are not official tracks. Topic percentages divide by selected papers; shares can sum above 100%. Survey/review labels are also title-based.',
+             'topic_note':'10 CG research areas and 30 subtopics combine specific title evidence, context-aware abstract rules, and OpenAlex model-generated keywords mapped to CG subjects. Open Topic evidence on a paper to inspect the phrases, source and version. These are automatic labels, not official tracks or expert-verified decisions. Uncertain papers remain unclassified. Source metadata availability differs by venue and year. Topic shares overlap; survey/review categories still use title keywords.',
+             'classification':{'version':VERSION,'basis_counts':dict(classification_counts),'unclassified':classification_counts['needs-review'],'baseline_unclassified':sum(ts==[UNCLASSIFIED] for ts in old_topics.values())},
              'counting_note':'A paper can belong to a conference and a journal. Venue counts overlap; total counts use unique publication identities. Conference filters use event years; journal filters use bibliographic publication years. Combined views prioritize conference editions and count each publication once.'}
     for v,m in VENUES.items():
         rows=[p for p in papers if v in p['venues']];years=Counter(p['venue_years'][v] for p in rows)
@@ -80,6 +91,22 @@ def main():
     save(DATA/'issue_mapping.json',[{'journal':k[0],'volume':k[1],'issue':k[2],'conference':v[0],'edition':v[1],'evidence':v[2],'dblp_records':v[3],'method':'official publication announcement' if v[3]==0 else 'unanimous DBLP issue membership'} for k,v in issues.items()])
     save(DATA/'year_audit.json',[{'id':p['id'],'title':p['title'],'year':p['year'],'publication_year':p['publication_year'],'venue_years':p['venue_years'],'source_years':p['source_years'],'evidence':p['venue_evidence']} for p in papers if p['year']!=p['publication_year'] or any(y!=p['publication_year'] for ys in p['source_years'].values() for y in ys)])
     geo=build_geography(papers);save(DATA/'geography.json',geo)
+    for prefix,entries in evidence_shards.items():save(DATA/'topic_evidence'/f'{prefix}.json',entries)
+    audit={'version':VERSION,'total':len(papers),'baseline_unclassified':sum(ts==[UNCLASSIFIED] for ts in old_topics.values()),
+           'unclassified':classification_counts['needs-review'],'basis_counts':dict(classification_counts),
+           'changed_area_sets':sum(set(p['topics'])!=set(old_topics[p['id']]) for p in papers),
+           'baseline_area_counts':dict(Counter(t for ts in old_topics.values() for t in ts)),
+           'area_counts':dict(Counter(t for p in papers for t in p['topics'])),
+           'by_venue':{},'by_abstract':{},
+           'metadata_dois':len(topic_metadata),'metadata_collection_complete':load('coverage_topics',{}).get('complete',False),
+           'note':'Coverage is not accuracy. Reference evaluation is AI-reviewed and reported separately. Local mapping uses no venue/year/country priors or paper-specific overrides; OpenAlex keyword predictions can use the source venue as input.'}
+    for v in VENUES:
+        rows=[p for p in papers if v in p['venues']]
+        audit['by_venue'][v]={'papers':len(rows),'with_abstract':sum(bool(p['abstract']) for p in rows),'baseline_unclassified':sum(old_topics[p['id']]==[UNCLASSIFIED] for p in rows),'unclassified':sum(p['topics']==[UNCLASSIFIED] for p in rows)}
+    for present in [True,False]:
+        rows=[p for p in papers if bool(p['abstract'])==present]
+        audit['by_abstract'][str(present)]={'papers':len(rows),'baseline_unclassified':sum(old_topics[p['id']]==[UNCLASSIFIED] for p in rows),'unclassified':sum(p['topics']==[UNCLASSIFIED] for p in rows)}
+    save(DATA/'topic_classification_audit.json',audit)
     if not args.draft:
         exports(papers,summary)
         template=(ROOT/'pipeline/site.html').read_text(encoding='utf-8').replace('<!-- ANALYTICS -->',(ROOT/'pipeline/analytics.html').read_text(encoding='utf-8'))

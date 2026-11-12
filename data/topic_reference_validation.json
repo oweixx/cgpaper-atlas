@@ -1,0 +1,783 @@
+{
+  "schema": 1,
+  "role": "post-freeze validation sample; predictions not shown while labeling",
+  "annotator": "Codex AI, also the classifier developer; not independent expert ground truth",
+  "sampling": "Seed 60261114; 6 per primary venue, split 3 before 2015 and 3 from 2015 onward; development and diagnostic papers excluded. Equal venue/era allocation is not population-proportional.",
+  "rubric": "Central research targets and substantive methods; no routine evaluations, incidental tools or demonstration applications. Abstain when evidence is insufficient.",
+  "classifier_sha256_before_sampling": "b495ff3b4b285b53be9bf87e172dca9b3054495545ac57694a58795099986114",
+  "records": [
+    {
+      "id": "139ed7c4e0c781edda93",
+      "title": "Performance-based control interface for character animation",
+      "venue": "SIGGRAPH",
+      "year": 2009,
+      "text_sha256": "5922d6402e46d3028effc902120c7e8097b6ed78c03835efba974d1474cc50cb",
+      "topics": [
+        "Animation & Simulation",
+        "XR & Interaction"
+      ],
+      "subtopics": [
+        "Character animation & motion",
+        "Interaction & interfaces"
+      ],
+      "rationale": "Motion-performance interface for controlling animated characters.",
+      "abstract_available": true
+    },
+    {
+      "id": "4685a399146637355f8c",
+      "title": "A simple and efficient error-diffusion algorithm",
+      "venue": "SIGGRAPH",
+      "year": 2001,
+      "text_sha256": "f234d65dfa9c4168e91c6e4719a095a1d752b638a68a51817ba6e10e39aee886",
+      "topics": [
+        "Images & Computational Photography",
+        "Fabrication & Materials"
+      ],
+      "subtopics": [
+        "Image processing & restoration",
+        "Texture & pattern design"
+      ],
+      "rationale": "Color quantization/error diffusion, a halftoning technique; not a generative diffusion model.",
+      "abstract_available": true
+    },
+    {
+      "id": "8957c19afdb0ca0e2c44",
+      "title": "Terrain generation using procedural models based on hydrology",
+      "venue": "SIGGRAPH",
+      "year": 2013,
+      "text_sha256": "35f936dce2d292b1ae42231e58d88a829e9e9c08e4ea492bc3abd87b8952df5c",
+      "topics": [
+        "Geometry & Modeling"
+      ],
+      "subtopics": [
+        "Procedural & scene modeling"
+      ],
+      "rationale": "Procedural terrain generation using hydrological structure.",
+      "abstract_available": true
+    },
+    {
+      "id": "739ec93ea07ae03cb4ef",
+      "title": "Stroke Transfer for Participating Media",
+      "venue": "SIGGRAPH",
+      "year": 2025,
+      "text_sha256": "952c53a0ff10906b8b865a059dc7c64db6213ec074ff87801b5d03e736ad5d85",
+      "topics": [
+        "Rendering"
+      ],
+      "subtopics": [
+        "Light transport & sampling"
+      ],
+      "rationale": "Participating-media stylization; title-only reference.",
+      "abstract_available": false
+    },
+    {
+      "id": "23bc0b02cd37205eeb0f",
+      "title": "Image vectorization and editing via linear gradient layer decomposition",
+      "venue": "SIGGRAPH",
+      "year": 2023,
+      "text_sha256": "a90790a149ac4cfc7b813b54c7565005bb781f61e28883f93fa2a6440cf1785d",
+      "topics": [
+        "Images & Computational Photography"
+      ],
+      "subtopics": [
+        "Image processing & restoration",
+        "Video & image editing"
+      ],
+      "rationale": "Vectorization and editing of raster images.",
+      "abstract_available": true
+    },
+    {
+      "id": "f2fabef745fa9763028e",
+      "title": "TeGA: Texture Space Gaussian Avatars for High-Resolution Dynamic Head Modeling",
+      "venue": "SIGGRAPH",
+      "year": 2025,
+      "text_sha256": "03cc4ebbb9a49d9204f6830c1daee22aad21c738bb58fee2bea54ecb3597f320",
+      "topics": [
+        "Rendering",
+        "Geometry & Modeling",
+        "Animation & Simulation",
+        "Neural & Generative Graphics"
+      ],
+      "subtopics": [
+        "Neural rendering & radiance fields",
+        "Character animation & motion",
+        "Shape modeling & reconstruction",
+        "Light transport & sampling"
+      ],
+      "rationale": "Gaussian head-avatar modeling, motion and rendering.",
+      "abstract_available": true
+    },
+    {
+      "id": "f4d5fe2fb5b28ef7eefc",
+      "title": "Assembling self-supporting structures",
+      "venue": "SIGGRAPH Asia",
+      "year": 2014,
+      "text_sha256": "4aed4368892c56ddd2fe2649a5e0369d2e1a161e79f7f5b164d6d7dfad02aac1",
+      "topics": [
+        "Fabrication & Materials"
+      ],
+      "subtopics": [
+        "Computational fabrication",
+        "Material & structure design"
+      ],
+      "rationale": "Construction sequence and structural stability of self-supporting masonry.",
+      "abstract_available": true
+    },
+    {
+      "id": "7c2db8cf5cf62e00653d",
+      "title": "Automatic generation of destination maps",
+      "venue": "SIGGRAPH Asia",
+      "year": 2010,
+      "text_sha256": "9677c1e6e125d6798b71dda22b489a654a46b522116563a483b27cfda53faf21",
+      "topics": [
+        "Visualization & Visual Analytics"
+      ],
+      "subtopics": [
+        "Information visualization"
+      ],
+      "rationale": "Cartographic information design and navigational map layout.",
+      "abstract_available": true
+    },
+    {
+      "id": "20eb4737d30c331d4307",
+      "title": "BiDi screen: a thin, depth-sensing LCD for 3D interaction using light fields",
+      "venue": "SIGGRAPH Asia",
+      "year": 2009,
+      "text_sha256": "badae5a10f23699284ed6003a5ddce9939460544dc2f8e4bfe62d9e6b1a8f94a",
+      "topics": [
+        "Images & Computational Photography",
+        "XR & Interaction"
+      ],
+      "subtopics": [
+        "Cameras, optics & displays",
+        "Interaction & interfaces"
+      ],
+      "rationale": "New capture/display device for touch and gesture interaction.",
+      "abstract_available": true
+    },
+    {
+      "id": "a32ba8ae978c4156273e",
+      "title": "Surface-Aware Distilled 3D Semantic Features",
+      "venue": "SIGGRAPH Asia",
+      "year": 2025,
+      "text_sha256": "266cf06926cd2eee5173308d9a73702ceef6dc47b9c45e2a091416e3ae822887",
+      "topics": [
+        "Geometry & Modeling",
+        "Neural & Generative Graphics"
+      ],
+      "subtopics": [
+        "Meshes & geometry processing",
+        "Learning for graphics"
+      ],
+      "rationale": "Learned geometric features for shape correspondence.",
+      "abstract_available": true
+    },
+    {
+      "id": "e77b7ef8e565d1825e8e",
+      "title": "elaTCSF: A Temporal Contrast Sensitivity Function for Flicker Detection and Modeling Variable Refresh Rate Flicker",
+      "venue": "SIGGRAPH Asia",
+      "year": 2024,
+      "text_sha256": "ea9603dfd6673958c5653fa8cabed95826d6e06d9ecff9511676db0f02829b4a",
+      "topics": [
+        "Perception & Evaluation"
+      ],
+      "subtopics": [
+        "Visual perception",
+        "Quality, metrics & benchmarks"
+      ],
+      "rationale": "Flicker perception model and newly introduced flicker detection dataset.",
+      "abstract_available": true
+    },
+    {
+      "id": "8e21148714a664c0845c",
+      "title": "Instant field-aligned meshes",
+      "venue": "SIGGRAPH Asia",
+      "year": 2015,
+      "text_sha256": "e794b6bfb9e42a4810bd58823c8ff480fc83d4c48e23c92a0f82b74a687bdcbe",
+      "topics": [
+        "Geometry & Modeling"
+      ],
+      "subtopics": [
+        "Meshes & geometry processing"
+      ],
+      "rationale": "Surface remeshing with field alignment; speed alone is not a systems field.",
+      "abstract_available": true
+    },
+    {
+      "id": "9f84c5a8a526081a8e5b",
+      "title": "Deformation Transfer to Multi-Component Objects",
+      "venue": "Eurographics",
+      "year": 2010,
+      "text_sha256": "b4bb12eae60fbc3355050c140a36e5595bd43d0fe13b1d03e2c387b374545a9a",
+      "topics": [
+        "Geometry & Modeling"
+      ],
+      "subtopics": [
+        "Meshes & geometry processing",
+        "Shape modeling & reconstruction"
+      ],
+      "rationale": "Geometric deformation transfer between multi-component meshes.",
+      "abstract_available": true
+    },
+    {
+      "id": "4090b41195b9e2b13155",
+      "title": "Mesh Simplification",
+      "venue": "Eurographics",
+      "year": 1996,
+      "text_sha256": "4e33f886da912b89d5109b2199aed18bfccffa60139c13690cf0d9689f3db8c4",
+      "topics": [
+        "Geometry & Modeling"
+      ],
+      "subtopics": [
+        "Meshes & geometry processing"
+      ],
+      "rationale": "Geometric mesh simplification.",
+      "abstract_available": true
+    },
+    {
+      "id": "721ebc61ce25ddc11240",
+      "title": "Multitouch Gestures for Constrained Transformation of 3D Objects",
+      "venue": "Eurographics",
+      "year": 2012,
+      "text_sha256": "e6a71079e3bb8ca9ce6b42e4d2c0fd8dddc2359b0857880efed17c238b82a708",
+      "topics": [
+        "XR & Interaction"
+      ],
+      "subtopics": [
+        "Interaction & interfaces"
+      ],
+      "rationale": "Multitouch manipulation gestures.",
+      "abstract_available": true
+    },
+    {
+      "id": "fbbd0a4c9528ea8d6f83",
+      "title": "Gradient-Domain ReSTIR Path Tracing",
+      "venue": "Eurographics",
+      "year": 2026,
+      "text_sha256": "bcee425107a3cd3db8f1b899aa4b16e0dc3aa7ac453184d306b56061265dc667",
+      "topics": [
+        "Rendering",
+        "Systems & Real-Time Graphics"
+      ],
+      "subtopics": [
+        "Light transport & sampling",
+        "Real-time rendering & engines"
+      ],
+      "rationale": "Real-time path-tracing estimator with temporal sample reuse.",
+      "abstract_available": true
+    },
+    {
+      "id": "a34c9775eae736ff73e6",
+      "title": "Contouring Signed Distance Fields by Approximating Gradients",
+      "venue": "Eurographics",
+      "year": 2026,
+      "text_sha256": "38486d9ce2295bb6cfd9d7d4d8df273b6ce6a79071fd6855b697a639bc5adfea",
+      "topics": [
+        "Geometry & Modeling"
+      ],
+      "subtopics": [
+        "Meshes & geometry processing",
+        "Shape modeling & reconstruction"
+      ],
+      "rationale": "Surface reconstruction/contouring of signed-distance samples.",
+      "abstract_available": true
+    },
+    {
+      "id": "0e1a7923a77c39595104",
+      "title": "A Multi-sided Bézier Patch with a Simple Control Structure",
+      "venue": "Eurographics",
+      "year": 2016,
+      "text_sha256": "33499f4bff7521120fc6a5bcce640272286d15087886c50e1cd0a2435bcf99cb",
+      "topics": [
+        "Geometry & Modeling"
+      ],
+      "subtopics": [
+        "Meshes & geometry processing"
+      ],
+      "rationale": "Parametric Bezier surface patches.",
+      "abstract_available": true
+    },
+    {
+      "id": "fe6e1fc00f85bc68f801",
+      "title": "Local Volume Preservation for Skinned Characters",
+      "venue": "Pacific Graphics",
+      "year": 2008,
+      "text_sha256": "91813c51e81abf1e3bb727a26b0459cfacfbedeaae9445d154b2cc365cf62ac0",
+      "topics": [
+        "Animation & Simulation"
+      ],
+      "subtopics": [
+        "Character animation & motion"
+      ],
+      "rationale": "Character skinning deformation; explicitly avoids physical simulation.",
+      "abstract_available": true
+    },
+    {
+      "id": "3af8357d51af5bf209d3",
+      "title": "Spherical harmonics scaling",
+      "venue": "Pacific Graphics",
+      "year": 2006,
+      "text_sha256": "ce3d183944e75a963f094f50002e0e0c9c08c4c70775ce09ff73ff61cbc7d0e8",
+      "topics": [],
+      "subtopics": [],
+      "rationale": "A mathematical basis operation with no abstract; application domain is unclear.",
+      "abstract_available": false
+    },
+    {
+      "id": "bdaeca9fc3a4a4db5e24",
+      "title": "A Simple Layered RGB BRDF Model",
+      "venue": "Pacific Graphics",
+      "year": 2002,
+      "text_sha256": "8dff58be6aa489a6b3771d0debc25c7ecf2499f22049dd7a3fea4efc709943ee",
+      "topics": [
+        "Rendering"
+      ],
+      "subtopics": [
+        "Shading & appearance"
+      ],
+      "rationale": "Spectral/colour behavior of layered BRDFs.",
+      "abstract_available": true
+    },
+    {
+      "id": "1b28d1bf7430e387521b",
+      "title": "High-resolution 360 Video Foveated Stitching for Real-time VR",
+      "venue": "Pacific Graphics",
+      "year": 2017,
+      "text_sha256": "c3e1675a9880610081e2de4ba45ac46e0321b0a7e9dc80d413ccbe970dd879af",
+      "topics": [
+        "Images & Computational Photography",
+        "XR & Interaction",
+        "Systems & Real-Time Graphics"
+      ],
+      "subtopics": [
+        "Video & image editing",
+        "Virtual & augmented reality",
+        "Real-time rendering & engines",
+        "GPU & parallel computing",
+        "Efficiency & compression"
+      ],
+      "rationale": "Video stitching for VR with GPU execution and foveated detail control.",
+      "abstract_available": true
+    },
+    {
+      "id": "a581945471de5cedabaf",
+      "title": "Albero: A Visual Analytics Approach for Probabilistic Weather Forecasting",
+      "venue": "Pacific Graphics",
+      "year": 2017,
+      "text_sha256": "36d20f5fce8a59858716885b97e285483a97da528e6a32c9ae13c9bb4e38b49f",
+      "topics": [
+        "Visualization & Visual Analytics"
+      ],
+      "subtopics": [
+        "Visual analytics & data exploration"
+      ],
+      "rationale": "Visual analytics for forecast uncertainty and expert analysis.",
+      "abstract_available": true
+    },
+    {
+      "id": "c2201a88a1209b19201a",
+      "title": "A Novel Plastic Phase-Field Method for Ductile Fracture with GPU Optimization",
+      "venue": "Pacific Graphics",
+      "year": 2020,
+      "text_sha256": "ec99efdbe64d5d58ecc4539d1cb622a432e5f3e049ff2f18c66c9cfba1318a56",
+      "topics": [
+        "Animation & Simulation",
+        "Systems & Real-Time Graphics"
+      ],
+      "subtopics": [
+        "Deformation, cloth & hair",
+        "GPU & parallel computing"
+      ],
+      "rationale": "Ductile-fracture simulation and GPU algorithm.",
+      "abstract_available": true
+    },
+    {
+      "id": "01697a8c8c6f5806d25e",
+      "title": "Worst-Case Optimal Hidden-Durface Removal",
+      "venue": "TOG",
+      "year": 1987,
+      "text_sha256": "e638e1e183fe9f0fbabc672a5f4d4970b1a945940bf6a0139e3c2a9c2ee87778",
+      "topics": [
+        "Rendering",
+        "Systems & Real-Time Graphics"
+      ],
+      "subtopics": [
+        "Light transport & sampling",
+        "Efficiency & compression"
+      ],
+      "rationale": "Hidden-surface removal and visibility algorithm complexity.",
+      "abstract_available": true
+    },
+    {
+      "id": "18adbcf275bc854b7f25",
+      "title": "ℓ1-Based Construction of Polycube Maps from Complex Shapes",
+      "venue": "TOG",
+      "year": 2014,
+      "text_sha256": "e57b2dd5e0484739d0b99b4ab84639a52601a967c208ab39f06a72968b090335",
+      "topics": [
+        "Geometry & Modeling"
+      ],
+      "subtopics": [
+        "Meshes & geometry processing",
+        "Shape modeling & reconstruction"
+      ],
+      "rationale": "Polycube mesh mapping and deformation.",
+      "abstract_available": true
+    },
+    {
+      "id": "de58760ef75fde8f7886",
+      "title": "Feature-based multiresolution modeling of solids",
+      "venue": "TOG",
+      "year": 2005,
+      "text_sha256": "d81426b0623c8ad301e08150f30ee05ef59dc9ba611289105ee14abb86101a1c",
+      "topics": [
+        "Geometry & Modeling",
+        "Systems & Real-Time Graphics"
+      ],
+      "subtopics": [
+        "Shape modeling & reconstruction",
+        "Efficiency & compression"
+      ],
+      "rationale": "CAD solid modeling with controlled levels of detail.",
+      "abstract_available": true
+    },
+    {
+      "id": "1f75174dc983d0e224fd",
+      "title": "CADRec: Reconstructing a CAD Sequence Recursively with Localized Geometric Contexts",
+      "venue": "TOG",
+      "year": 2026,
+      "text_sha256": "8c68cad35b94f7e68c6ad133cfe75b0232b7c359c3bd1060d351545db291c2c5",
+      "topics": [
+        "Geometry & Modeling",
+        "Neural & Generative Graphics"
+      ],
+      "subtopics": [
+        "Shape modeling & reconstruction",
+        "Learning for graphics"
+      ],
+      "rationale": "Learned/MLLM-driven reconstruction of CAD programs.",
+      "abstract_available": true
+    },
+    {
+      "id": "d59969e9b0da644acbb8",
+      "title": "Neural Centroidal Voronoi Tessellations",
+      "venue": "TOG",
+      "year": 2026,
+      "text_sha256": "20785d501f696150b3fad0da77fb49212342d005e350226c1d9a5afcacc69bc6",
+      "topics": [
+        "Geometry & Modeling",
+        "Neural & Generative Graphics"
+      ],
+      "subtopics": [
+        "Meshes & geometry processing",
+        "Learning for graphics"
+      ],
+      "rationale": "Neural surface tessellation and remeshing optimizer.",
+      "abstract_available": true
+    },
+    {
+      "id": "55de00ed0a19d8eb773b",
+      "title": "Ortho-arc Curves: Generative Design of Developable Bands and Polygonal Tubes",
+      "venue": "TOG",
+      "year": 2026,
+      "text_sha256": "aa535de99af79ed7dbade79bf2591b6f0c29c41c111b7113d3a177cbdeeb28c4",
+      "topics": [
+        "Geometry & Modeling"
+      ],
+      "subtopics": [
+        "Meshes & geometry processing",
+        "Shape modeling & reconstruction"
+      ],
+      "rationale": "Analytic curves and developable surface design; not generative AI.",
+      "abstract_available": true
+    },
+    {
+      "id": "3d67f0cba4862188338c",
+      "title": "Space-in-Time and Time-in-Space Self-Organizing Maps for Exploring Spatiotemporal Patterns",
+      "venue": "CGF",
+      "year": 2010,
+      "text_sha256": "f8d6e91babb66203c9a8016e0e83b54cc35a3c7ee309af93f103b16def746da4",
+      "topics": [
+        "Visualization & Visual Analytics"
+      ],
+      "subtopics": [
+        "Information visualization",
+        "Visual analytics & data exploration"
+      ],
+      "rationale": "Visual analytics of spatiotemporal data with coordinated map/chart views.",
+      "abstract_available": true
+    },
+    {
+      "id": "3fa4084664664e0cbb96",
+      "title": "Semi-Uniform Adaptive Patch Tessellation",
+      "venue": "CGF",
+      "year": 2009,
+      "text_sha256": "461d02eec71b61cc2591335187e8e2236edee4706f3dabd36df2932a7d9dddfa",
+      "topics": [
+        "Geometry & Modeling",
+        "Systems & Real-Time Graphics"
+      ],
+      "subtopics": [
+        "Meshes & geometry processing",
+        "GPU & parallel computing"
+      ],
+      "rationale": "Surface tessellation and GPU instancing implementation.",
+      "abstract_available": true
+    },
+    {
+      "id": "01b88426968988bba1f7",
+      "title": "Data Visualization: A Keyword Bibliography",
+      "venue": "CGF",
+      "year": 1993,
+      "text_sha256": "e76e27e93f8ddf8711bf0ccb43950dd1a0ceac9e629f31f68918edec7fb5dbe9",
+      "topics": [
+        "Visualization & Visual Analytics"
+      ],
+      "subtopics": [
+        "Information visualization"
+      ],
+      "rationale": "Bibliography about data visualization; title-only topic evidence.",
+      "abstract_available": false
+    },
+    {
+      "id": "9bc7d28ed20b3d1f0410",
+      "title": "HMLFC: Hierarchical Motion-Compensated Light Field Compression for Interactive Rendering",
+      "venue": "CGF",
+      "year": 2019,
+      "text_sha256": "7006b47abb049f4955211a7a44709502d609a192fb530d096715059e6670df1f",
+      "topics": [
+        "Rendering",
+        "Images & Computational Photography",
+        "Systems & Real-Time Graphics"
+      ],
+      "subtopics": [
+        "Cameras, optics & displays",
+        "Light transport & sampling",
+        "Real-time rendering & engines",
+        "GPU & parallel computing",
+        "Efficiency & compression"
+      ],
+      "rationale": "Light-field compression for interactive GPU rendering.",
+      "abstract_available": true
+    },
+    {
+      "id": "2bd6de175e6f30b0112f",
+      "title": "Fiber-Level On-the-Fly Procedural Textiles",
+      "venue": "CGF",
+      "year": 2017,
+      "text_sha256": "551d5bfd5ad4ed50be6805e86f22ae22377b8956882597f61cf044fc790e0598",
+      "topics": [
+        "Rendering",
+        "Fabrication & Materials",
+        "Systems & Real-Time Graphics"
+      ],
+      "subtopics": [
+        "Light transport & sampling",
+        "Texture & pattern design",
+        "Efficiency & compression"
+      ],
+      "rationale": "Procedural textile rendering with reduced memory storage.",
+      "abstract_available": true
+    },
+    {
+      "id": "54f98bb84b1f323522f6",
+      "title": "Real-Time Ray Tracing of Micro-Poly Geometry with Hierarchical Level of Detail",
+      "venue": "CGF",
+      "year": 2023,
+      "text_sha256": "ed7fa9b8b805fbf42f3e5ed6c6a5edecc5afc41263ad2917924280421fded7ed",
+      "topics": [
+        "Rendering",
+        "Systems & Real-Time Graphics"
+      ],
+      "subtopics": [
+        "Light transport & sampling",
+        "Real-time rendering & engines",
+        "GPU & parallel computing",
+        "Efficiency & compression"
+      ],
+      "rationale": "Real-time hardware ray tracing with compressed geometric LOD/BVH.",
+      "abstract_available": true
+    },
+    {
+      "id": "66d97b7d9fdee0592fbc",
+      "title": "Walking in a Cube: Novel Metaphors for Safely Navigating Large Virtual Environments in Restricted Real Workspaces",
+      "venue": "TVCG",
+      "year": 2012,
+      "text_sha256": "e051bd03d984b1f9f5a82655ae2fad76cd9908bfbcda3f209e0e54271f7668b6",
+      "topics": [
+        "XR & Interaction"
+      ],
+      "subtopics": [
+        "Virtual & augmented reality",
+        "Interaction & interfaces"
+      ],
+      "rationale": "Human navigation techniques in immersive spaces, not animated-character locomotion.",
+      "abstract_available": true
+    },
+    {
+      "id": "225246e327fba8f16cb0",
+      "title": "Wavelet-Based Progressive Compression Scheme for Triangle Meshes: Wavemesh",
+      "venue": "TVCG",
+      "year": 2004,
+      "text_sha256": "e3e5710442961be9fc5a56dd17ab1657cbb8b3c738ee658d41e14cf07ae06782",
+      "topics": [
+        "Geometry & Modeling",
+        "Systems & Real-Time Graphics"
+      ],
+      "subtopics": [
+        "Meshes & geometry processing",
+        "Efficiency & compression"
+      ],
+      "rationale": "Geometric mesh compression.",
+      "abstract_available": true
+    },
+    {
+      "id": "77c854686d290f45b05c",
+      "title": "An Efficient Naturalness-Preserving Image-Recoloring Method for Dichromats",
+      "venue": "TVCG",
+      "year": 2008,
+      "text_sha256": "4ea7ba7ee502d8a74c58d744fefb2486428bb089028a5f31a3f958eabed83f63",
+      "topics": [
+        "Images & Computational Photography"
+      ],
+      "subtopics": [
+        "Image processing & restoration"
+      ],
+      "rationale": "Image recoloring for colour-vision deficiency; visualization is a demonstration application.",
+      "abstract_available": true
+    },
+    {
+      "id": "c78c16c06bed94ed2baa",
+      "title": "SceneFusion: Room-Scale Environmental Fusion for Efficient Traveling Between Separate Virtual Environments",
+      "venue": "TVCG",
+      "year": 2024,
+      "text_sha256": "99f1f70b1db2570dce80227374b17ff7fca31df435c22a3a2a1f74db297ae99b",
+      "topics": [
+        "XR & Interaction"
+      ],
+      "subtopics": [
+        "Virtual & augmented reality",
+        "Interaction & interfaces"
+      ],
+      "rationale": "User navigation and transitions among VR environments.",
+      "abstract_available": true
+    },
+    {
+      "id": "45e714f3d98778ab242a",
+      "title": "Vector Field Topology of Time-Dependent Flows in a Steady Reference Frame",
+      "venue": "TVCG",
+      "year": 2020,
+      "text_sha256": "43eba0127ba813f3ec1e11aa99eeccbff2ce781b269ae6732b022443f8a8ad2e",
+      "topics": [
+        "Visualization & Visual Analytics"
+      ],
+      "subtopics": [
+        "Scientific & volume visualization"
+      ],
+      "rationale": "Topology of flow fields for scientific visualization.",
+      "abstract_available": true
+    },
+    {
+      "id": "1673a01c66ba1d328c4d",
+      "title": "Modeling Realistic Clothing From a Single Image Under Normal Guide",
+      "venue": "TVCG",
+      "year": 2024,
+      "text_sha256": "ccb72da13a787ae2027adcb9297d917f55e88c563226a6ebfbfbec261d3dd139",
+      "topics": [
+        "Geometry & Modeling",
+        "Animation & Simulation",
+        "Neural & Generative Graphics"
+      ],
+      "subtopics": [
+        "Shape modeling & reconstruction",
+        "Deformation, cloth & hair",
+        "Learning for graphics"
+      ],
+      "rationale": "Learned clothing shape reconstruction.",
+      "abstract_available": true
+    },
+    {
+      "id": "cdad271dfe8e63c20b3f",
+      "title": "Computer graphics generated from the iteration of algebraic transformations in the complex plane",
+      "venue": "C&G",
+      "year": 1985,
+      "text_sha256": "b79063d761a15e0a724c055c0e7ba49d581c82e98c919e59063f80d0911108c9",
+      "topics": [],
+      "subtopics": [],
+      "rationale": "Title-only algebraic image generation lacks enough task-specific evidence for these subtopics.",
+      "abstract_available": false
+    },
+    {
+      "id": "e6e6a25f193bbcc8f450",
+      "title": "An extension of CGI functions for generation and manipulation of raster images",
+      "venue": "C&G",
+      "year": 1989,
+      "text_sha256": "71a936c907077182557ba0f36aa75f0033c5f7506dd3a3bcd6f68f0dedb4ce25",
+      "topics": [
+        "Images & Computational Photography",
+        "Systems & Real-Time Graphics"
+      ],
+      "subtopics": [
+        "Image processing & restoration",
+        "Real-time rendering & engines"
+      ],
+      "rationale": "Graphics interface functions for raster generation/manipulation.",
+      "abstract_available": false
+    },
+    {
+      "id": "afee696748831905d830",
+      "title": "Extracting vectors from raster images",
+      "venue": "C&G",
+      "year": 1988,
+      "text_sha256": "3a43747a198510ca7b86be96be0ee15feef66380147420676a8ba27f3d673616",
+      "topics": [
+        "Images & Computational Photography"
+      ],
+      "subtopics": [
+        "Image processing & restoration"
+      ],
+      "rationale": "Raster-to-vector image conversion.",
+      "abstract_available": false
+    },
+    {
+      "id": "e58925173a42d49fd50b",
+      "title": "Mitigating bias in facial analysis systems by incorporating label diversity",
+      "venue": "C&G",
+      "year": 2023,
+      "text_sha256": "a3b1d87c917766fef7d97fe8a7314507f47b1ff11850d48b248994336e3a93c3",
+      "topics": [],
+      "subtopics": [],
+      "rationale": "Fairness of facial-analysis labels does not establish a listed CG research field from the title alone.",
+      "abstract_available": false
+    },
+    {
+      "id": "5785c34f261e146aa711",
+      "title": "NEGS-Avatar: Normal Embedded Gaussians for 2D avatar from monocular video",
+      "venue": "C&G",
+      "year": 2026,
+      "text_sha256": "8d15e2771052d2b75d64ba260fa2488dd0c758efa5b3be6addcf22e8ae7359b7",
+      "topics": [
+        "Animation & Simulation",
+        "Neural & Generative Graphics"
+      ],
+      "subtopics": [
+        "Character animation & motion",
+        "Neural rendering & radiance fields"
+      ],
+      "rationale": "Gaussian avatar representation; title-only reference.",
+      "abstract_available": false
+    },
+    {
+      "id": "325bab1d478c8a7b8976",
+      "title": "Recent advances in vision-based indoor navigation: A systematic literature review",
+      "venue": "C&G",
+      "year": 2022,
+      "text_sha256": "30dbc998ad5863841778d258ceb777189451767994aa703498fd8020a2095e9e",
+      "topics": [],
+      "subtopics": [],
+      "rationale": "Vision-based indoor navigation is outside the detailed CG taxonomy without additional XR/modeling evidence.",
+      "abstract_available": false
+    }
+  ],
+  "subsequent_use": "Used as development material for v3 after the recorded earlier-version evaluation; not part of the v3 holdout."
+}

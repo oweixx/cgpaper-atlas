@@ -8,6 +8,7 @@
     "Unknown affiliations include unmatched papers; reset clears country and shared URL state",
     "SIGGRAPH and TOG union counts shared papers once",
     "Known Gaussian Splatting paper resolves once across conference and journal",
+    "Topic evidence loads on demand once, shows source and version, and fits mobile",
     "Empty results and reset work",
     "Journal year, review category and exported paper rows agree",
     "Pagination and page size work",
@@ -17,6 +18,7 @@
     "Empty geographic selections are handled explicitly",
     "All views fit the mobile viewport",
     "Eight-venue provenance and coverage are visible",
+    "Failed evidence requests can be retried without affecting paper results",
     "Affiliation failure preserves the requested country, blocks misleading exports and supports retry",
     "Unindexed country URLs show no matches instead of silently broadening to all countries"
   ],

@@ -1,12 +1,13 @@
 # Collection report
 
-Built: 2026-11-12T14:28:51.153734+00:00
+Built: 2026-11-12T15:40:36.530980+00:00
 
 Unique publications: 27,362. Overlapping venue memberships: 6,895 papers.
 DBLP streams audited: 8. Crossref journal inventories audited: 4.
 OpenAlex exact DOI matches: 27,107. Requests complete: True.
 Excluded non-research/out-of-scope items: 3,695.
 Country-covered papers: 25,526 (93.3%).
+Classification: cg-topics-v3.0. Unclassified: 4,000; title-only baseline: 5,765. Coverage is not accuracy. See [classification methodology](TOPIC_CLASSIFICATION.md).
 
 | Venue | Years | Memberships | Abstracts | Citations |
 |---|---:|---:|---:|---:|

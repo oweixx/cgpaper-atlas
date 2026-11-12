@@ -44,7 +44,11 @@ Snapshot 생성: **{s['built_at']}**. 실제 수집 시각은 출처 ledger에 �
 
 전체 구현과 데이터의 개선 우선순위는 [검토 기록](docs/REVIEW.md)을 참고하세요.
 
-주제는 모든 venue에서 **제목만 사용하는 키워드 규칙**으로 분류합니다. 공식 학회 분류나 검증된 모델 예측은 아닙니다. 한 논문이 여러 주제에 속하므로 주제별 비중 합계는 100%를 넘을 수 있습니다. 비중의 분모는 선택한 전체 논문 수입니다. 국가별 주제 비중의 분모는 선택 기간·venue에서 해당 국가 소속이 확인된 전체 논문 수입니다.
+주제는 **제목·문맥을 고려한 초록 규칙·OpenAlex 의미 키워드**를 결합한 `{s['classification']['version']}`으로 분류합니다. OpenAlex 키워드는 저자가 지정한 정답이 아니라 모델의 예측입니다. 논문마다 **Topic evidence**에서 분야·세부 분야, 근거 문구, 출처와 버전을 확인할 수 있습니다. 미분류는 **{s['classification']['unclassified']:,}편**이며 억지로 분야를 부여하지 않습니다. 필터 CSV와 전체 다운로드에도 분야·세부 분야·분류 버전을 포함합니다.
+
+분류기 확정 후 별도 64편에서 분야 단위 micro-F1은 기존 58.4%에서 68.8%로 개선됐습니다. 이 표본은 개발자와 동일한 AI가 검토했으며 **독립 전문가 정답셋이나 전체 정확도 추정치가 아닙니다**. 세부 주제의 정확도는 별도로 검증하지 않았습니다. [방법과 한계](docs/TOPIC_CLASSIFICATION.md), [평가 원본](data/topic_validation.json), [분류 변화·커버리지](data/topic_classification_audit.json)를 공개합니다.
+
+한 논문이 여러 주제에 속하므로 주제별 비중 합계는 100%를 넘을 수 있습니다. 비중의 분모는 선택한 전체 논문 수입니다. 국가별 주제 비중의 분모는 선택 기간·venue에서 해당 국가 소속이 확인된 전체 논문 수입니다.
 
 국가 정보: **{c['papers_with_country']:,}/{total:,}편 ({100*c['papers_with_country']/total:.1f}%)**. 소속 국가가 알려진 고유 OpenAlex 저자 ID는 **{c['unique_author_ids_with_country']:,}개**입니다. 국적이 아닌 논문 당시 기관 소속입니다. 저자 ID로 중복을 제거하며 여러 국가의 소속이 있는 저자는 각 국가에서 집계합니다. 국가 합계는 더할 수 없습니다. 기관 본사 위치, 소속 연결 오류, 저자 식별 오류, 시대별 정보량 차이의 영향을 받을 수 있습니다. 불명확한 소속은 이름으로 추정하지 않습니다. OpenAlex의 첫 100개 authorship 제한에 걸렸을 가능성이 있는 논문은 {c['possibly_truncated_papers']}편입니다.
 
@@ -65,7 +69,9 @@ python pipeline/collect_crossref.py
 python pipeline/build_cg.py --draft
 # Set OPENALEX_API_KEY in the process environment when authenticated quota is needed.
 python pipeline/collect_openalex.py
+python pipeline/collect_topics.py
 python pipeline/build_cg.py
+python pipeline/evaluate_topics.py --reference topic_reference_holdout.json --output data/topic_validation.json
 python -m unittest discover -s pipeline -p test_cg.py
 python pipeline/validate_cg.py
 python -m http.server 8767 --bind 127.0.0.1
@@ -102,6 +108,7 @@ DBLP streams audited: {len(ledger['dblp'])}. Crossref journal inventories audite
 OpenAlex exact DOI matches: {ledger['openalex'].get('matched_dois',0):,}. Requests complete: {ledger['openalex'].get('complete',False)}.
 Excluded non-research/out-of-scope items: {ledger['excluded_nonpapers']:,}.
 Country-covered papers: {c['papers_with_country']:,} ({100*c['papers_with_country']/total:.1f}%).
+Classification: {s['classification']['version']}. Unclassified: {s['classification']['unclassified']:,}; title-only baseline: {s['classification']['baseline_unclassified']:,}. Coverage is not accuracy. See [classification methodology](TOPIC_CLASSIFICATION.md).
 
 | Venue | Years | Memberships | Abstracts | Citations |
 |---|---:|---:|---:|---:|

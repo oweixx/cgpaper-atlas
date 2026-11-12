@@ -27,13 +27,15 @@ jobs:
           python -m unittest discover -s pipeline -p test_cg.py -v
           python pipeline/validate_cg.py
           node --check assets/app.js
+          node --check assets/topics.js
           node --check assets/analytics.js
       - name: Assemble the static website
         run: |
           mkdir -p _site/assets _site/data _site/downloads
           cp .nojekyll index.html explorer.html by_year.html research_areas.html global_research.html dataset_preview.html _site/
-          cp assets/app.js assets/analytics.js assets/style.css _site/assets/
-          cp data/{papers,summary,geography,world,year_audit,issue_mapping,coverage,coverage_affiliations}.json _site/data/
+          cp assets/app.js assets/analytics.js assets/topics.js assets/style.css _site/assets/
+          cp data/{papers,summary,geography,world,year_audit,issue_mapping,coverage,coverage_affiliations,coverage_topics,topic_classification_audit,topic_validation,topic_reference_holdout}.json _site/data/
+          cp -r data/topic_evidence _site/data/
           cp downloads/cgpaper_atlas.{xlsx,csv.gz,jsonl.gz} _site/downloads/
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v4

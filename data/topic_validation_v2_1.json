@@ -1,0 +1,1483 @@
+{
+  "classifier_version": "cg-topics-v2.1",
+  "reference_role": "final post-freeze v2.1 validation sample; predictions not shown while labeling; not used to tune v2.1",
+  "annotator": "Codex AI, also the classifier developer; not independent expert ground truth",
+  "sampling": "Seed 60261115; 4 per primary venue, 2 before 2015 and 2 from 2015 onward; all 128 prior references and 30 diagnostic examples excluded. Equal venue/era allocation is not population-proportional.",
+  "limitation": "AI-reviewed reference labels, not independent expert ground truth; this small stratified sample is not a population accuracy estimate. Area-level metrics do not validate every subtopic.",
+  "models": {
+    "v1_title": {
+      "overall": {
+        "papers": 32,
+        "true_positive": 30,
+        "false_positive": 8,
+        "false_negative": 17,
+        "precision": 0.7894736842105263,
+        "recall": 0.6382978723404256,
+        "micro_f1": 0.7058823529411765,
+        "exact_match": 0.4375
+      },
+      "by_area": {
+        "Rendering": {
+          "papers": 32,
+          "true_positive": 4,
+          "false_positive": 0,
+          "false_negative": 6,
+          "precision": 1.0,
+          "recall": 0.4,
+          "micro_f1": 0.5714285714285714,
+          "exact_match": 0.8125
+        },
+        "Geometry & Modeling": {
+          "papers": 32,
+          "true_positive": 7,
+          "false_positive": 2,
+          "false_negative": 2,
+          "precision": 0.7777777777777778,
+          "recall": 0.7777777777777778,
+          "micro_f1": 0.7777777777777778,
+          "exact_match": 0.875
+        },
+        "Animation & Simulation": {
+          "papers": 32,
+          "true_positive": 3,
+          "false_positive": 0,
+          "false_negative": 2,
+          "precision": 1.0,
+          "recall": 0.6,
+          "micro_f1": 0.75,
+          "exact_match": 0.9375
+        },
+        "Neural & Generative Graphics": {
+          "papers": 32,
+          "true_positive": 2,
+          "false_positive": 0,
+          "false_negative": 1,
+          "precision": 1.0,
+          "recall": 0.6666666666666666,
+          "micro_f1": 0.8,
+          "exact_match": 0.96875
+        },
+        "Images & Computational Photography": {
+          "papers": 32,
+          "true_positive": 2,
+          "false_positive": 2,
+          "false_negative": 0,
+          "precision": 0.5,
+          "recall": 1.0,
+          "micro_f1": 0.6666666666666666,
+          "exact_match": 0.9375
+        },
+        "Visualization & Visual Analytics": {
+          "papers": 32,
+          "true_positive": 4,
+          "false_positive": 0,
+          "false_negative": 2,
+          "precision": 1.0,
+          "recall": 0.6666666666666666,
+          "micro_f1": 0.8,
+          "exact_match": 0.9375
+        },
+        "XR & Interaction": {
+          "papers": 32,
+          "true_positive": 4,
+          "false_positive": 1,
+          "false_negative": 0,
+          "precision": 0.8,
+          "recall": 1.0,
+          "micro_f1": 0.8888888888888888,
+          "exact_match": 0.96875
+        },
+        "Fabrication & Materials": {
+          "papers": 32,
+          "true_positive": 0,
+          "false_positive": 0,
+          "false_negative": 2,
+          "precision": null,
+          "recall": 0.0,
+          "micro_f1": 0.0,
+          "exact_match": 0.9375
+        },
+        "Systems & Real-Time Graphics": {
+          "papers": 32,
+          "true_positive": 3,
+          "false_positive": 1,
+          "false_negative": 1,
+          "precision": 0.75,
+          "recall": 0.75,
+          "micro_f1": 0.75,
+          "exact_match": 0.9375
+        },
+        "Perception & Evaluation": {
+          "papers": 32,
+          "true_positive": 1,
+          "false_positive": 2,
+          "false_negative": 1,
+          "precision": 0.3333333333333333,
+          "recall": 0.5,
+          "micro_f1": 0.4,
+          "exact_match": 0.90625
+        }
+      },
+      "by_venue": {
+        "C&G": {
+          "papers": 4,
+          "true_positive": 4,
+          "false_positive": 1,
+          "false_negative": 1,
+          "precision": 0.8,
+          "recall": 0.8,
+          "micro_f1": 0.8,
+          "exact_match": 0.5
+        },
+        "CGF": {
+          "papers": 4,
+          "true_positive": 3,
+          "false_positive": 1,
+          "false_negative": 1,
+          "precision": 0.75,
+          "recall": 0.75,
+          "micro_f1": 0.75,
+          "exact_match": 0.5
+        },
+        "Eurographics": {
+          "papers": 4,
+          "true_positive": 2,
+          "false_positive": 1,
+          "false_negative": 3,
+          "precision": 0.6666666666666666,
+          "recall": 0.4,
+          "micro_f1": 0.5,
+          "exact_match": 0.25
+        },
+        "Pacific Graphics": {
+          "papers": 4,
+          "true_positive": 5,
+          "false_positive": 1,
+          "false_negative": 2,
+          "precision": 0.8333333333333334,
+          "recall": 0.7142857142857143,
+          "micro_f1": 0.7692307692307693,
+          "exact_match": 0.5
+        },
+        "SIGGRAPH": {
+          "papers": 4,
+          "true_positive": 5,
+          "false_positive": 2,
+          "false_negative": 1,
+          "precision": 0.7142857142857143,
+          "recall": 0.8333333333333334,
+          "micro_f1": 0.7692307692307693,
+          "exact_match": 0.5
+        },
+        "SIGGRAPH Asia": {
+          "papers": 4,
+          "true_positive": 5,
+          "false_positive": 1,
+          "false_negative": 2,
+          "precision": 0.8333333333333334,
+          "recall": 0.7142857142857143,
+          "micro_f1": 0.7692307692307693,
+          "exact_match": 0.5
+        },
+        "TOG": {
+          "papers": 4,
+          "true_positive": 2,
+          "false_positive": 0,
+          "false_negative": 6,
+          "precision": 1.0,
+          "recall": 0.25,
+          "micro_f1": 0.4,
+          "exact_match": 0.25
+        },
+        "TVCG": {
+          "papers": 4,
+          "true_positive": 4,
+          "false_positive": 1,
+          "false_negative": 1,
+          "precision": 0.8,
+          "recall": 0.8,
+          "micro_f1": 0.8,
+          "exact_match": 0.5
+        }
+      },
+      "by_abstract": {
+        "True": {
+          "papers": 27,
+          "true_positive": 26,
+          "false_positive": 6,
+          "false_negative": 16,
+          "precision": 0.8125,
+          "recall": 0.6190476190476191,
+          "micro_f1": 0.7027027027027027,
+          "exact_match": 0.4444444444444444
+        },
+        "False": {
+          "papers": 5,
+          "true_positive": 4,
+          "false_positive": 2,
+          "false_negative": 1,
+          "precision": 0.6666666666666666,
+          "recall": 0.8,
+          "micro_f1": 0.7272727272727273,
+          "exact_match": 0.4
+        }
+      },
+      "by_era": {
+        "before_2015": {
+          "papers": 16,
+          "true_positive": 12,
+          "false_positive": 3,
+          "false_negative": 6,
+          "precision": 0.8,
+          "recall": 0.6666666666666666,
+          "micro_f1": 0.7272727272727273,
+          "exact_match": 0.5
+        },
+        "2015_onward": {
+          "papers": 16,
+          "true_positive": 18,
+          "false_positive": 5,
+          "false_negative": 11,
+          "precision": 0.782608695652174,
+          "recall": 0.6206896551724138,
+          "micro_f1": 0.6923076923076923,
+          "exact_match": 0.375
+        }
+      },
+      "disagreements": [
+        {
+          "id": "05b986e12d8f7ff1ef16",
+          "title": "Printing spatially-varying reflectance for reproducing HDR images",
+          "venue": "SIGGRAPH",
+          "year": 2012,
+          "abstract_available": true,
+          "reference": [
+            "Rendering",
+            "Fabrication & Materials"
+          ],
+          "predicted": [
+            "Rendering",
+            "Images & Computational Photography"
+          ]
+        },
+        {
+          "id": "96daf71e4b12a132897d",
+          "title": "Single Image Neural Material Relighting",
+          "venue": "SIGGRAPH",
+          "year": 2023,
+          "abstract_available": true,
+          "reference": [
+            "Rendering",
+            "Neural & Generative Graphics"
+          ],
+          "predicted": [
+            "Rendering",
+            "Neural & Generative Graphics",
+            "Images & Computational Photography"
+          ]
+        },
+        {
+          "id": "5da433109d6326e7854c",
+          "title": "Adaptive cutaways for comprehensible rendering of polygonal scenes",
+          "venue": "SIGGRAPH Asia",
+          "year": 2008,
+          "abstract_available": true,
+          "reference": [
+            "Rendering",
+            "Systems & Real-Time Graphics"
+          ],
+          "predicted": [
+            "Rendering"
+          ]
+        },
+        {
+          "id": "e54c5966bc6ef896d22b",
+          "title": "High-Fidelity and Real-Time Novel View Synthesis for Dynamic Scenes",
+          "venue": "SIGGRAPH Asia",
+          "year": 2023,
+          "abstract_available": true,
+          "reference": [
+            "Rendering",
+            "Neural & Generative Graphics",
+            "Systems & Real-Time Graphics"
+          ],
+          "predicted": [
+            "Neural & Generative Graphics",
+            "Systems & Real-Time Graphics",
+            "Perception & Evaluation"
+          ]
+        },
+        {
+          "id": "7fb7ee1a61a3d9be5406",
+          "title": "Precise Ink Drawing of 3D Models",
+          "venue": "Eurographics",
+          "year": 2003,
+          "abstract_available": true,
+          "reference": [
+            "Rendering"
+          ],
+          "predicted": []
+        },
+        {
+          "id": "72ee206a61da2901c6c8",
+          "title": "Fast and Exact Root Parity for Continuous Collision Detection",
+          "venue": "Eurographics",
+          "year": 2022,
+          "abstract_available": true,
+          "reference": [
+            "Animation & Simulation"
+          ],
+          "predicted": []
+        },
+        {
+          "id": "ad7c3bd28daac2907490",
+          "title": "OptFlowCam: A 3D-Image-Flow-Based Metric in Camera Space for Camera Paths in Scenes with Extreme Scale Variations",
+          "venue": "Eurographics",
+          "year": 2024,
+          "abstract_available": true,
+          "reference": [
+            "Animation & Simulation",
+            "Images & Computational Photography"
+          ],
+          "predicted": [
+            "Images & Computational Photography",
+            "Perception & Evaluation"
+          ]
+        },
+        {
+          "id": "13066f7f66fee0d47004",
+          "title": "TEASAR: Tree-Structure Extraction Algorithm for Accurate and Robust Skeletons",
+          "venue": "Pacific Graphics",
+          "year": 2000,
+          "abstract_available": true,
+          "reference": [
+            "Geometry & Modeling"
+          ],
+          "predicted": []
+        },
+        {
+          "id": "6b211d4082a1dd9eb91e",
+          "title": "Efficient Direct Isosurface Rasterization of Scalar Volumes",
+          "venue": "Pacific Graphics",
+          "year": 2022,
+          "abstract_available": true,
+          "reference": [
+            "Rendering",
+            "Visualization & Visual Analytics",
+            "Systems & Real-Time Graphics"
+          ],
+          "predicted": [
+            "Geometry & Modeling",
+            "Visualization & Visual Analytics",
+            "Systems & Real-Time Graphics"
+          ]
+        },
+        {
+          "id": "7e4148fe949c0ab1882f",
+          "title": "A Local Frequency Analysis of Light Scattering and Absorption",
+          "venue": "TOG",
+          "year": 2014,
+          "abstract_available": true,
+          "reference": [
+            "Rendering"
+          ],
+          "predicted": []
+        },
+        {
+          "id": "78f9e48208c68b618281",
+          "title": "CLOTHO: Canonicalizing IMUs from Loose Inertial Garments for Accurate Human Motion Tracking",
+          "venue": "TOG",
+          "year": 2026,
+          "abstract_available": true,
+          "reference": [
+            "Animation & Simulation",
+            "Neural & Generative Graphics",
+            "Perception & Evaluation"
+          ],
+          "predicted": [
+            "Animation & Simulation"
+          ]
+        },
+        {
+          "id": "a8627610a6c47c934bdc",
+          "title": "Computational Mirror Cup and Saucer Art",
+          "venue": "TOG",
+          "year": 2022,
+          "abstract_available": true,
+          "reference": [
+            "Rendering",
+            "Geometry & Modeling",
+            "Fabrication & Materials"
+          ],
+          "predicted": []
+        },
+        {
+          "id": "f801c414e2ec4e6a13ed",
+          "title": "Description and Solution of an Unreported Intrinsic Bias in Photon Mapping Density Estimation with Constant Kernel",
+          "venue": "CGF",
+          "year": 2012,
+          "abstract_available": true,
+          "reference": [
+            "Rendering"
+          ],
+          "predicted": []
+        },
+        {
+          "id": "3378de23a85014b47452",
+          "title": "Yet another Remark on the Modelling Clip Problem",
+          "venue": "CGF",
+          "year": 1989,
+          "abstract_available": false,
+          "reference": [],
+          "predicted": [
+            "Geometry & Modeling"
+          ]
+        },
+        {
+          "id": "5843f76f8e54cf0a9022",
+          "title": "Facilitating Discourse Analysis with Interactive Visualization",
+          "venue": "TVCG",
+          "year": 2012,
+          "abstract_available": true,
+          "reference": [
+            "Visualization & Visual Analytics"
+          ],
+          "predicted": [
+            "Visualization & Visual Analytics",
+            "XR & Interaction"
+          ]
+        },
+        {
+          "id": "633228f778aa082a2ea1",
+          "title": "Color-Name Aware Optimization to Enhance the Perception of Transparent Overlapped Charts",
+          "venue": "TVCG",
+          "year": 2025,
+          "abstract_available": true,
+          "reference": [
+            "Visualization & Visual Analytics",
+            "Perception & Evaluation"
+          ],
+          "predicted": [
+            "Perception & Evaluation"
+          ]
+        },
+        {
+          "id": "97ca9ac05dd168892dd7",
+          "title": "Efficient image decolorization with a multimodal contrast-preserving measure",
+          "venue": "C&G",
+          "year": 2018,
+          "abstract_available": false,
+          "reference": [
+            "Images & Computational Photography"
+          ],
+          "predicted": [
+            "Images & Computational Photography",
+            "Systems & Real-Time Graphics"
+          ]
+        },
+        {
+          "id": "6fb206573896523f1e23",
+          "title": "DynBioSketch: A tool for sketching dynamic visual summaries in biology, and its application to infection phenomena",
+          "venue": "C&G",
+          "year": 2024,
+          "abstract_available": false,
+          "reference": [
+            "Visualization & Visual Analytics",
+            "XR & Interaction"
+          ],
+          "predicted": [
+            "XR & Interaction"
+          ]
+        }
+      ]
+    },
+    "v2_title": {
+      "overall": {
+        "papers": 32,
+        "true_positive": 21,
+        "false_positive": 2,
+        "false_negative": 26,
+        "precision": 0.9130434782608695,
+        "recall": 0.44680851063829785,
+        "micro_f1": 0.6,
+        "exact_match": 0.375
+      },
+      "by_area": {
+        "Rendering": {
+          "papers": 32,
+          "true_positive": 4,
+          "false_positive": 0,
+          "false_negative": 6,
+          "precision": 1.0,
+          "recall": 0.4,
+          "micro_f1": 0.5714285714285714,
+          "exact_match": 0.8125
+        },
+        "Geometry & Modeling": {
+          "papers": 32,
+          "true_positive": 5,
+          "false_positive": 1,
+          "false_negative": 4,
+          "precision": 0.8333333333333334,
+          "recall": 0.5555555555555556,
+          "micro_f1": 0.6666666666666666,
+          "exact_match": 0.84375
+        },
+        "Animation & Simulation": {
+          "papers": 32,
+          "true_positive": 2,
+          "false_positive": 0,
+          "false_negative": 3,
+          "precision": 1.0,
+          "recall": 0.4,
+          "micro_f1": 0.5714285714285714,
+          "exact_match": 0.90625
+        },
+        "Neural & Generative Graphics": {
+          "papers": 32,
+          "true_positive": 1,
+          "false_positive": 0,
+          "false_negative": 2,
+          "precision": 1.0,
+          "recall": 0.3333333333333333,
+          "micro_f1": 0.5,
+          "exact_match": 0.9375
+        },
+        "Images & Computational Photography": {
+          "papers": 32,
+          "true_positive": 1,
+          "false_positive": 1,
+          "false_negative": 1,
+          "precision": 0.5,
+          "recall": 0.5,
+          "micro_f1": 0.5,
+          "exact_match": 0.9375
+        },
+        "Visualization & Visual Analytics": {
+          "papers": 32,
+          "true_positive": 5,
+          "false_positive": 0,
+          "false_negative": 1,
+          "precision": 1.0,
+          "recall": 0.8333333333333334,
+          "micro_f1": 0.9090909090909091,
+          "exact_match": 0.96875
+        },
+        "XR & Interaction": {
+          "papers": 32,
+          "true_positive": 0,
+          "false_positive": 0,
+          "false_negative": 4,
+          "precision": null,
+          "recall": 0.0,
+          "micro_f1": 0.0,
+          "exact_match": 0.875
+        },
+        "Fabrication & Materials": {
+          "papers": 32,
+          "true_positive": 0,
+          "false_positive": 0,
+          "false_negative": 2,
+          "precision": null,
+          "recall": 0.0,
+          "micro_f1": 0.0,
+          "exact_match": 0.9375
+        },
+        "Systems & Real-Time Graphics": {
+          "papers": 32,
+          "true_positive": 2,
+          "false_positive": 0,
+          "false_negative": 2,
+          "precision": 1.0,
+          "recall": 0.5,
+          "micro_f1": 0.6666666666666666,
+          "exact_match": 0.9375
+        },
+        "Perception & Evaluation": {
+          "papers": 32,
+          "true_positive": 1,
+          "false_positive": 0,
+          "false_negative": 1,
+          "precision": 1.0,
+          "recall": 0.5,
+          "micro_f1": 0.6666666666666666,
+          "exact_match": 0.96875
+        }
+      },
+      "by_venue": {
+        "C&G": {
+          "papers": 4,
+          "true_positive": 1,
+          "false_positive": 0,
+          "false_negative": 4,
+          "precision": 1.0,
+          "recall": 0.2,
+          "micro_f1": 0.3333333333333333,
+          "exact_match": 0.25
+        },
+        "CGF": {
+          "papers": 4,
+          "true_positive": 2,
+          "false_positive": 0,
+          "false_negative": 2,
+          "precision": 1.0,
+          "recall": 0.5,
+          "micro_f1": 0.6666666666666666,
+          "exact_match": 0.5
+        },
+        "Eurographics": {
+          "papers": 4,
+          "true_positive": 2,
+          "false_positive": 0,
+          "false_negative": 3,
+          "precision": 1.0,
+          "recall": 0.4,
+          "micro_f1": 0.5714285714285714,
+          "exact_match": 0.25
+        },
+        "Pacific Graphics": {
+          "papers": 4,
+          "true_positive": 4,
+          "false_positive": 1,
+          "false_negative": 3,
+          "precision": 0.8,
+          "recall": 0.5714285714285714,
+          "micro_f1": 0.6666666666666666,
+          "exact_match": 0.25
+        },
+        "SIGGRAPH": {
+          "papers": 4,
+          "true_positive": 4,
+          "false_positive": 0,
+          "false_negative": 2,
+          "precision": 1.0,
+          "recall": 0.6666666666666666,
+          "micro_f1": 0.8,
+          "exact_match": 0.5
+        },
+        "SIGGRAPH Asia": {
+          "papers": 4,
+          "true_positive": 1,
+          "false_positive": 1,
+          "false_negative": 6,
+          "precision": 0.5,
+          "recall": 0.14285714285714285,
+          "micro_f1": 0.2222222222222222,
+          "exact_match": 0.0
+        },
+        "TOG": {
+          "papers": 4,
+          "true_positive": 2,
+          "false_positive": 0,
+          "false_negative": 6,
+          "precision": 1.0,
+          "recall": 0.25,
+          "micro_f1": 0.4,
+          "exact_match": 0.25
+        },
+        "TVCG": {
+          "papers": 4,
+          "true_positive": 5,
+          "false_positive": 0,
+          "false_negative": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "micro_f1": 1.0,
+          "exact_match": 1.0
+        }
+      },
+      "by_abstract": {
+        "True": {
+          "papers": 27,
+          "true_positive": 20,
+          "false_positive": 2,
+          "false_negative": 22,
+          "precision": 0.9090909090909091,
+          "recall": 0.47619047619047616,
+          "micro_f1": 0.625,
+          "exact_match": 0.37037037037037035
+        },
+        "False": {
+          "papers": 5,
+          "true_positive": 1,
+          "false_positive": 0,
+          "false_negative": 4,
+          "precision": 1.0,
+          "recall": 0.2,
+          "micro_f1": 0.3333333333333333,
+          "exact_match": 0.4
+        }
+      },
+      "by_era": {
+        "before_2015": {
+          "papers": 16,
+          "true_positive": 11,
+          "false_positive": 1,
+          "false_negative": 7,
+          "precision": 0.9166666666666666,
+          "recall": 0.6111111111111112,
+          "micro_f1": 0.7333333333333333,
+          "exact_match": 0.5625
+        },
+        "2015_onward": {
+          "papers": 16,
+          "true_positive": 10,
+          "false_positive": 1,
+          "false_negative": 19,
+          "precision": 0.9090909090909091,
+          "recall": 0.3448275862068966,
+          "micro_f1": 0.5,
+          "exact_match": 0.1875
+        }
+      },
+      "disagreements": [
+        {
+          "id": "05b986e12d8f7ff1ef16",
+          "title": "Printing spatially-varying reflectance for reproducing HDR images",
+          "venue": "SIGGRAPH",
+          "year": 2012,
+          "abstract_available": true,
+          "reference": [
+            "Rendering",
+            "Fabrication & Materials"
+          ],
+          "predicted": [
+            "Rendering"
+          ]
+        },
+        {
+          "id": "2bd448bc53f20112409b",
+          "title": "An Induce-on-Boundary Magnetostatic Solver for Grid-Based Ferrofluids",
+          "venue": "SIGGRAPH",
+          "year": 2024,
+          "abstract_available": true,
+          "reference": [
+            "Animation & Simulation"
+          ],
+          "predicted": []
+        },
+        {
+          "id": "cb2b1545104e2dd53030",
+          "title": "Inverse bi-scale material design",
+          "venue": "SIGGRAPH Asia",
+          "year": 2013,
+          "abstract_available": true,
+          "reference": [
+            "Rendering"
+          ],
+          "predicted": []
+        },
+        {
+          "id": "5da433109d6326e7854c",
+          "title": "Adaptive cutaways for comprehensible rendering of polygonal scenes",
+          "venue": "SIGGRAPH Asia",
+          "year": 2008,
+          "abstract_available": true,
+          "reference": [
+            "Rendering",
+            "Systems & Real-Time Graphics"
+          ],
+          "predicted": [
+            "Rendering",
+            "Geometry & Modeling"
+          ]
+        },
+        {
+          "id": "e54c5966bc6ef896d22b",
+          "title": "High-Fidelity and Real-Time Novel View Synthesis for Dynamic Scenes",
+          "venue": "SIGGRAPH Asia",
+          "year": 2023,
+          "abstract_available": true,
+          "reference": [
+            "Rendering",
+            "Neural & Generative Graphics",
+            "Systems & Real-Time Graphics"
+          ],
+          "predicted": []
+        },
+        {
+          "id": "9bdb9c03b6e4dab8a712",
+          "title": "BoolSurf: Boolean Operations on Surfaces",
+          "venue": "SIGGRAPH Asia",
+          "year": 2022,
+          "abstract_available": true,
+          "reference": [
+            "Geometry & Modeling"
+          ],
+          "predicted": []
+        },
+        {
+          "id": "7fb7ee1a61a3d9be5406",
+          "title": "Precise Ink Drawing of 3D Models",
+          "venue": "Eurographics",
+          "year": 2003,
+          "abstract_available": true,
+          "reference": [
+            "Rendering"
+          ],
+          "predicted": []
+        },
+        {
+          "id": "72ee206a61da2901c6c8",
+          "title": "Fast and Exact Root Parity for Continuous Collision Detection",
+          "venue": "Eurographics",
+          "year": 2022,
+          "abstract_available": true,
+          "reference": [
+            "Animation & Simulation"
+          ],
+          "predicted": []
+        },
+        {
+          "id": "ad7c3bd28daac2907490",
+          "title": "OptFlowCam: A 3D-Image-Flow-Based Metric in Camera Space for Camera Paths in Scenes with Extreme Scale Variations",
+          "venue": "Eurographics",
+          "year": 2024,
+          "abstract_available": true,
+          "reference": [
+            "Animation & Simulation",
+            "Images & Computational Photography"
+          ],
+          "predicted": [
+            "Images & Computational Photography"
+          ]
+        },
+        {
+          "id": "13066f7f66fee0d47004",
+          "title": "TEASAR: Tree-Structure Extraction Algorithm for Accurate and Robust Skeletons",
+          "venue": "Pacific Graphics",
+          "year": 2000,
+          "abstract_available": true,
+          "reference": [
+            "Geometry & Modeling"
+          ],
+          "predicted": []
+        },
+        {
+          "id": "ce9923af263530abc023",
+          "title": "Automatic Modeling of Urban Facades from Raw LiDAR Point Data",
+          "venue": "Pacific Graphics",
+          "year": 2016,
+          "abstract_available": true,
+          "reference": [
+            "Geometry & Modeling"
+          ],
+          "predicted": [
+            "Images & Computational Photography"
+          ]
+        },
+        {
+          "id": "6b211d4082a1dd9eb91e",
+          "title": "Efficient Direct Isosurface Rasterization of Scalar Volumes",
+          "venue": "Pacific Graphics",
+          "year": 2022,
+          "abstract_available": true,
+          "reference": [
+            "Rendering",
+            "Visualization & Visual Analytics",
+            "Systems & Real-Time Graphics"
+          ],
+          "predicted": [
+            "Visualization & Visual Analytics",
+            "Systems & Real-Time Graphics"
+          ]
+        },
+        {
+          "id": "7e4148fe949c0ab1882f",
+          "title": "A Local Frequency Analysis of Light Scattering and Absorption",
+          "venue": "TOG",
+          "year": 2014,
+          "abstract_available": true,
+          "reference": [
+            "Rendering"
+          ],
+          "predicted": []
+        },
+        {
+          "id": "78f9e48208c68b618281",
+          "title": "CLOTHO: Canonicalizing IMUs from Loose Inertial Garments for Accurate Human Motion Tracking",
+          "venue": "TOG",
+          "year": 2026,
+          "abstract_available": true,
+          "reference": [
+            "Animation & Simulation",
+            "Neural & Generative Graphics",
+            "Perception & Evaluation"
+          ],
+          "predicted": [
+            "Animation & Simulation"
+          ]
+        },
+        {
+          "id": "a8627610a6c47c934bdc",
+          "title": "Computational Mirror Cup and Saucer Art",
+          "venue": "TOG",
+          "year": 2022,
+          "abstract_available": true,
+          "reference": [
+            "Rendering",
+            "Geometry & Modeling",
+            "Fabrication & Materials"
+          ],
+          "predicted": []
+        },
+        {
+          "id": "a02087e8199ff7f540c1",
+          "title": "Deconstructing Human-AI Collaboration: Agency, Interaction, and Adaptation",
+          "venue": "CGF",
+          "year": 2024,
+          "abstract_available": true,
+          "reference": [
+            "XR & Interaction"
+          ],
+          "predicted": []
+        },
+        {
+          "id": "29a6fc46bad5fee81bcf",
+          "title": "ROI Scissor: Interactive Segmentation of Feature Region of Interest in a Triangular Mesh",
+          "venue": "CGF",
+          "year": 2023,
+          "abstract_available": true,
+          "reference": [
+            "Geometry & Modeling",
+            "XR & Interaction"
+          ],
+          "predicted": [
+            "Geometry & Modeling"
+          ]
+        },
+        {
+          "id": "fcef376fe12223bcbbb2",
+          "title": "Interactive cutting of 3D surface meshes",
+          "venue": "C&G",
+          "year": 2001,
+          "abstract_available": false,
+          "reference": [
+            "Geometry & Modeling",
+            "XR & Interaction"
+          ],
+          "predicted": [
+            "Geometry & Modeling"
+          ]
+        },
+        {
+          "id": "97ca9ac05dd168892dd7",
+          "title": "Efficient image decolorization with a multimodal contrast-preserving measure",
+          "venue": "C&G",
+          "year": 2018,
+          "abstract_available": false,
+          "reference": [
+            "Images & Computational Photography"
+          ],
+          "predicted": []
+        },
+        {
+          "id": "6fb206573896523f1e23",
+          "title": "DynBioSketch: A tool for sketching dynamic visual summaries in biology, and its application to infection phenomena",
+          "venue": "C&G",
+          "year": 2024,
+          "abstract_available": false,
+          "reference": [
+            "Visualization & Visual Analytics",
+            "XR & Interaction"
+          ],
+          "predicted": []
+        }
+      ]
+    },
+    "v2_title_abstract": {
+      "overall": {
+        "papers": 32,
+        "true_positive": 28,
+        "false_positive": 8,
+        "false_negative": 19,
+        "precision": 0.7777777777777778,
+        "recall": 0.5957446808510638,
+        "micro_f1": 0.6746987951807228,
+        "exact_match": 0.40625
+      },
+      "by_area": {
+        "Rendering": {
+          "papers": 32,
+          "true_positive": 7,
+          "false_positive": 0,
+          "false_negative": 3,
+          "precision": 1.0,
+          "recall": 0.7,
+          "micro_f1": 0.8235294117647058,
+          "exact_match": 0.90625
+        },
+        "Geometry & Modeling": {
+          "papers": 32,
+          "true_positive": 7,
+          "false_positive": 4,
+          "false_negative": 2,
+          "precision": 0.6363636363636364,
+          "recall": 0.7777777777777778,
+          "micro_f1": 0.7,
+          "exact_match": 0.8125
+        },
+        "Animation & Simulation": {
+          "papers": 32,
+          "true_positive": 3,
+          "false_positive": 2,
+          "false_negative": 2,
+          "precision": 0.6,
+          "recall": 0.6,
+          "micro_f1": 0.6,
+          "exact_match": 0.875
+        },
+        "Neural & Generative Graphics": {
+          "papers": 32,
+          "true_positive": 1,
+          "false_positive": 0,
+          "false_negative": 2,
+          "precision": 1.0,
+          "recall": 0.3333333333333333,
+          "micro_f1": 0.5,
+          "exact_match": 0.9375
+        },
+        "Images & Computational Photography": {
+          "papers": 32,
+          "true_positive": 1,
+          "false_positive": 2,
+          "false_negative": 1,
+          "precision": 0.3333333333333333,
+          "recall": 0.5,
+          "micro_f1": 0.4,
+          "exact_match": 0.90625
+        },
+        "Visualization & Visual Analytics": {
+          "papers": 32,
+          "true_positive": 5,
+          "false_positive": 0,
+          "false_negative": 1,
+          "precision": 1.0,
+          "recall": 0.8333333333333334,
+          "micro_f1": 0.9090909090909091,
+          "exact_match": 0.96875
+        },
+        "XR & Interaction": {
+          "papers": 32,
+          "true_positive": 0,
+          "false_positive": 0,
+          "false_negative": 4,
+          "precision": null,
+          "recall": 0.0,
+          "micro_f1": 0.0,
+          "exact_match": 0.875
+        },
+        "Fabrication & Materials": {
+          "papers": 32,
+          "true_positive": 0,
+          "false_positive": 0,
+          "false_negative": 2,
+          "precision": null,
+          "recall": 0.0,
+          "micro_f1": 0.0,
+          "exact_match": 0.9375
+        },
+        "Systems & Real-Time Graphics": {
+          "papers": 32,
+          "true_positive": 3,
+          "false_positive": 0,
+          "false_negative": 1,
+          "precision": 1.0,
+          "recall": 0.75,
+          "micro_f1": 0.8571428571428571,
+          "exact_match": 0.96875
+        },
+        "Perception & Evaluation": {
+          "papers": 32,
+          "true_positive": 1,
+          "false_positive": 0,
+          "false_negative": 1,
+          "precision": 1.0,
+          "recall": 0.5,
+          "micro_f1": 0.6666666666666666,
+          "exact_match": 0.96875
+        }
+      },
+      "by_venue": {
+        "C&G": {
+          "papers": 4,
+          "true_positive": 1,
+          "false_positive": 0,
+          "false_negative": 4,
+          "precision": 1.0,
+          "recall": 0.2,
+          "micro_f1": 0.3333333333333333,
+          "exact_match": 0.25
+        },
+        "CGF": {
+          "papers": 4,
+          "true_positive": 2,
+          "false_positive": 0,
+          "false_negative": 2,
+          "precision": 1.0,
+          "recall": 0.5,
+          "micro_f1": 0.6666666666666666,
+          "exact_match": 0.5
+        },
+        "Eurographics": {
+          "papers": 4,
+          "true_positive": 4,
+          "false_positive": 3,
+          "false_negative": 1,
+          "precision": 0.5714285714285714,
+          "recall": 0.8,
+          "micro_f1": 0.6666666666666666,
+          "exact_match": 0.25
+        },
+        "Pacific Graphics": {
+          "papers": 4,
+          "true_positive": 6,
+          "false_positive": 1,
+          "false_negative": 1,
+          "precision": 0.8571428571428571,
+          "recall": 0.8571428571428571,
+          "micro_f1": 0.8571428571428571,
+          "exact_match": 0.5
+        },
+        "SIGGRAPH": {
+          "papers": 4,
+          "true_positive": 4,
+          "false_positive": 0,
+          "false_negative": 2,
+          "precision": 1.0,
+          "recall": 0.6666666666666666,
+          "micro_f1": 0.8,
+          "exact_match": 0.5
+        },
+        "SIGGRAPH Asia": {
+          "papers": 4,
+          "true_positive": 3,
+          "false_positive": 2,
+          "false_negative": 4,
+          "precision": 0.6,
+          "recall": 0.42857142857142855,
+          "micro_f1": 0.5,
+          "exact_match": 0.25
+        },
+        "TOG": {
+          "papers": 4,
+          "true_positive": 3,
+          "false_positive": 1,
+          "false_negative": 5,
+          "precision": 0.75,
+          "recall": 0.375,
+          "micro_f1": 0.5,
+          "exact_match": 0.25
+        },
+        "TVCG": {
+          "papers": 4,
+          "true_positive": 5,
+          "false_positive": 1,
+          "false_negative": 0,
+          "precision": 0.8333333333333334,
+          "recall": 1.0,
+          "micro_f1": 0.9090909090909091,
+          "exact_match": 0.75
+        }
+      },
+      "by_abstract": {
+        "True": {
+          "papers": 27,
+          "true_positive": 27,
+          "false_positive": 8,
+          "false_negative": 15,
+          "precision": 0.7714285714285715,
+          "recall": 0.6428571428571429,
+          "micro_f1": 0.7012987012987013,
+          "exact_match": 0.4074074074074074
+        },
+        "False": {
+          "papers": 5,
+          "true_positive": 1,
+          "false_positive": 0,
+          "false_negative": 4,
+          "precision": 1.0,
+          "recall": 0.2,
+          "micro_f1": 0.3333333333333333,
+          "exact_match": 0.4
+        }
+      },
+      "by_era": {
+        "before_2015": {
+          "papers": 16,
+          "true_positive": 14,
+          "false_positive": 4,
+          "false_negative": 4,
+          "precision": 0.7777777777777778,
+          "recall": 0.7777777777777778,
+          "micro_f1": 0.7777777777777778,
+          "exact_match": 0.5625
+        },
+        "2015_onward": {
+          "papers": 16,
+          "true_positive": 14,
+          "false_positive": 4,
+          "false_negative": 15,
+          "precision": 0.7777777777777778,
+          "recall": 0.4827586206896552,
+          "micro_f1": 0.5957446808510638,
+          "exact_match": 0.25
+        }
+      },
+      "disagreements": [
+        {
+          "id": "05b986e12d8f7ff1ef16",
+          "title": "Printing spatially-varying reflectance for reproducing HDR images",
+          "venue": "SIGGRAPH",
+          "year": 2012,
+          "abstract_available": true,
+          "reference": [
+            "Rendering",
+            "Fabrication & Materials"
+          ],
+          "predicted": [
+            "Rendering"
+          ]
+        },
+        {
+          "id": "2bd448bc53f20112409b",
+          "title": "An Induce-on-Boundary Magnetostatic Solver for Grid-Based Ferrofluids",
+          "venue": "SIGGRAPH",
+          "year": 2024,
+          "abstract_available": true,
+          "reference": [
+            "Animation & Simulation"
+          ],
+          "predicted": []
+        },
+        {
+          "id": "cb2b1545104e2dd53030",
+          "title": "Inverse bi-scale material design",
+          "venue": "SIGGRAPH Asia",
+          "year": 2013,
+          "abstract_available": true,
+          "reference": [
+            "Rendering"
+          ],
+          "predicted": []
+        },
+        {
+          "id": "5da433109d6326e7854c",
+          "title": "Adaptive cutaways for comprehensible rendering of polygonal scenes",
+          "venue": "SIGGRAPH Asia",
+          "year": 2008,
+          "abstract_available": true,
+          "reference": [
+            "Rendering",
+            "Systems & Real-Time Graphics"
+          ],
+          "predicted": [
+            "Rendering",
+            "Geometry & Modeling",
+            "Systems & Real-Time Graphics"
+          ]
+        },
+        {
+          "id": "e54c5966bc6ef896d22b",
+          "title": "High-Fidelity and Real-Time Novel View Synthesis for Dynamic Scenes",
+          "venue": "SIGGRAPH Asia",
+          "year": 2023,
+          "abstract_available": true,
+          "reference": [
+            "Rendering",
+            "Neural & Generative Graphics",
+            "Systems & Real-Time Graphics"
+          ],
+          "predicted": [
+            "Geometry & Modeling"
+          ]
+        },
+        {
+          "id": "7fb7ee1a61a3d9be5406",
+          "title": "Precise Ink Drawing of 3D Models",
+          "venue": "Eurographics",
+          "year": 2003,
+          "abstract_available": true,
+          "reference": [
+            "Rendering"
+          ],
+          "predicted": [
+            "Rendering",
+            "Geometry & Modeling",
+            "Animation & Simulation"
+          ]
+        },
+        {
+          "id": "72ee206a61da2901c6c8",
+          "title": "Fast and Exact Root Parity for Continuous Collision Detection",
+          "venue": "Eurographics",
+          "year": 2022,
+          "abstract_available": true,
+          "reference": [
+            "Animation & Simulation"
+          ],
+          "predicted": []
+        },
+        {
+          "id": "ad7c3bd28daac2907490",
+          "title": "OptFlowCam: A 3D-Image-Flow-Based Metric in Camera Space for Camera Paths in Scenes with Extreme Scale Variations",
+          "venue": "Eurographics",
+          "year": 2024,
+          "abstract_available": true,
+          "reference": [
+            "Animation & Simulation",
+            "Images & Computational Photography"
+          ],
+          "predicted": [
+            "Geometry & Modeling",
+            "Animation & Simulation",
+            "Images & Computational Photography"
+          ]
+        },
+        {
+          "id": "13066f7f66fee0d47004",
+          "title": "TEASAR: Tree-Structure Extraction Algorithm for Accurate and Robust Skeletons",
+          "venue": "Pacific Graphics",
+          "year": 2000,
+          "abstract_available": true,
+          "reference": [
+            "Geometry & Modeling"
+          ],
+          "predicted": []
+        },
+        {
+          "id": "ce9923af263530abc023",
+          "title": "Automatic Modeling of Urban Facades from Raw LiDAR Point Data",
+          "venue": "Pacific Graphics",
+          "year": 2016,
+          "abstract_available": true,
+          "reference": [
+            "Geometry & Modeling"
+          ],
+          "predicted": [
+            "Geometry & Modeling",
+            "Images & Computational Photography"
+          ]
+        },
+        {
+          "id": "7e4148fe949c0ab1882f",
+          "title": "A Local Frequency Analysis of Light Scattering and Absorption",
+          "venue": "TOG",
+          "year": 2014,
+          "abstract_available": true,
+          "reference": [
+            "Rendering"
+          ],
+          "predicted": [
+            "Rendering",
+            "Images & Computational Photography"
+          ]
+        },
+        {
+          "id": "78f9e48208c68b618281",
+          "title": "CLOTHO: Canonicalizing IMUs from Loose Inertial Garments for Accurate Human Motion Tracking",
+          "venue": "TOG",
+          "year": 2026,
+          "abstract_available": true,
+          "reference": [
+            "Animation & Simulation",
+            "Neural & Generative Graphics",
+            "Perception & Evaluation"
+          ],
+          "predicted": [
+            "Animation & Simulation"
+          ]
+        },
+        {
+          "id": "a8627610a6c47c934bdc",
+          "title": "Computational Mirror Cup and Saucer Art",
+          "venue": "TOG",
+          "year": 2022,
+          "abstract_available": true,
+          "reference": [
+            "Rendering",
+            "Geometry & Modeling",
+            "Fabrication & Materials"
+          ],
+          "predicted": []
+        },
+        {
+          "id": "a02087e8199ff7f540c1",
+          "title": "Deconstructing Human-AI Collaboration: Agency, Interaction, and Adaptation",
+          "venue": "CGF",
+          "year": 2024,
+          "abstract_available": true,
+          "reference": [
+            "XR & Interaction"
+          ],
+          "predicted": []
+        },
+        {
+          "id": "29a6fc46bad5fee81bcf",
+          "title": "ROI Scissor: Interactive Segmentation of Feature Region of Interest in a Triangular Mesh",
+          "venue": "CGF",
+          "year": 2023,
+          "abstract_available": true,
+          "reference": [
+            "Geometry & Modeling",
+            "XR & Interaction"
+          ],
+          "predicted": [
+            "Geometry & Modeling"
+          ]
+        },
+        {
+          "id": "2e1334a5bafe99f5fb8e",
+          "title": "A Discrete Probabilistic Approach to Dense Flow Visualization",
+          "venue": "TVCG",
+          "year": 2021,
+          "abstract_available": true,
+          "reference": [
+            "Visualization & Visual Analytics"
+          ],
+          "predicted": [
+            "Animation & Simulation",
+            "Visualization & Visual Analytics"
+          ]
+        },
+        {
+          "id": "fcef376fe12223bcbbb2",
+          "title": "Interactive cutting of 3D surface meshes",
+          "venue": "C&G",
+          "year": 2001,
+          "abstract_available": false,
+          "reference": [
+            "Geometry & Modeling",
+            "XR & Interaction"
+          ],
+          "predicted": [
+            "Geometry & Modeling"
+          ]
+        },
+        {
+          "id": "97ca9ac05dd168892dd7",
+          "title": "Efficient image decolorization with a multimodal contrast-preserving measure",
+          "venue": "C&G",
+          "year": 2018,
+          "abstract_available": false,
+          "reference": [
+            "Images & Computational Photography"
+          ],
+          "predicted": []
+        },
+        {
+          "id": "6fb206573896523f1e23",
+          "title": "DynBioSketch: A tool for sketching dynamic visual summaries in biology, and its application to infection phenomena",
+          "venue": "C&G",
+          "year": 2024,
+          "abstract_available": false,
+          "reference": [
+            "Visualization & Visual Analytics",
+            "XR & Interaction"
+          ],
+          "predicted": []
+        }
+      ]
+    }
+  }
+}

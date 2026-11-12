@@ -1,6 +1,6 @@
 import unittest
 from metadata import merge_records,normalize_doi
-from taxonomy import classify
+from taxonomy import classify,classify_with_evidence,VERSION
 from geography import build_geography
 from collect_openalex import normalize_authorships
 
@@ -62,4 +62,50 @@ class CGTests(unittest.TestCase):
         g=build_geography([{'id':'p','doi':'10.1/a'},{'id':'q','doi':'10.1/b'}],source={'10.1/a':{'authors':a},'10.1/b':{'authors':a}},ledger={'complete':True})
         self.assertEqual(g['coverage']['unique_author_ids_with_country'],1)
         self.assertEqual(g['coverage']['authorships_with_country'],2)
+class TopicTests(unittest.TestCase):
+    def metadata(self,*keywords):
+        return {'openalex_id':'https://openalex.org/W1','retrieved_at':'2026-11-13',
+                'keywords':[{'id':f'https://openalex.org/keywords/{i}',
+                             'display_name':name,'score':score} for i,(name,score) in enumerate(keywords)]}
+    def test_motion_retargeting_is_not_image_retargeting(self):
+        areas,_=classify('Motion retargeting for character animation')
+        self.assertIn('Animation & Simulation',areas)
+        self.assertNotIn('Images & Computational Photography',areas)
+    def test_geometric_diffusion_is_not_a_generative_model(self):
+        areas,_=classify('Anisotropic diffusion on triangle meshes')
+        self.assertIn('Geometry & Modeling',areas)
+        self.assertNotIn('Neural & Generative Graphics',areas)
+    def test_neural_network_is_not_network_visualization(self):
+        areas,_=classify('Neural networks for character animation')
+        self.assertNotIn('Visualization & Visual Analytics',areas)
+    def test_background_comparison_is_not_a_contribution(self):
+        areas,_=classify('A new construction','Previous approaches used neural rendering. We propose mesh parameterization.')
+        self.assertIn('Geometry & Modeling',areas)
+        self.assertNotIn('Neural & Generative Graphics',areas)
+    def test_missing_evidence_abstains(self):
+        r=classify_with_evidence('A new approach')
+        self.assertEqual(r['topics'],['Other / Unclassified'])
+        self.assertEqual(r['basis'],'needs-review');self.assertFalse(r['evidence'])
+    def test_haptic_rendering_is_not_light_transport(self):
+        areas,_=classify('A new approach','',self.metadata(('Haptic rendering',.9)))
+        self.assertIn('XR & Interaction',areas);self.assertNotIn('Rendering',areas)
+    def test_external_evidence_retains_provenance(self):
+        r=classify_with_evidence('A new approach','',self.metadata(('Gaussian splatting',.9)))
+        self.assertIn('Neural & Generative Graphics',r['topics']);self.assertIn('Rendering',r['topics'])
+        self.assertEqual(r['version'],VERSION)
+        for e in r['evidence']:
+            self.assertEqual(e['source_url'],'https://openalex.org/keywords/0')
+            self.assertEqual(e['source_score'],.9);self.assertEqual(e['source_rank'],1)
+    def test_low_score_cannot_create_external_label(self):
+        low=classify('A new approach','',self.metadata(('Gaussian splatting',.64)))
+        high=classify('A new approach','',self.metadata(('Gaussian splatting',.65)))
+        self.assertEqual(low[0],['Other / Unclassified']);self.assertIn('Rendering',high[0])
+    def test_keyword_order_is_not_replaced_by_score_sorting(self):
+        r=classify('A new approach','',self.metadata(*([('Unmapped subject',.7)]*5+[('Gaussian splatting',1.0)])))
+        self.assertEqual(r[0],['Other / Unclassified'])
+    def test_unmapped_metadata_preserves_local_evidence(self):
+        r=classify_with_evidence('Mesh parameterization','',self.metadata(('Unmapped subject',.9)))
+        self.assertIn('Geometry & Modeling',r['topics'])
+        self.assertTrue(any(e['basis']=='title' for e in r['evidence']))
+
 if __name__=='__main__':unittest.main()

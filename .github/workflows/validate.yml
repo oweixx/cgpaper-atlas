@@ -15,4 +15,5 @@ jobs:
       - run: python -m unittest discover -s pipeline -p test_cg.py -v
       - run: python pipeline/validate_cg.py
       - run: node --check assets/app.js
+      - run: node --check assets/topics.js
       - run: node --check assets/analytics.js
